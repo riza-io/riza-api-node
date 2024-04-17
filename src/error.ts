@@ -2,9 +2,9 @@
 
 import { castToError, Headers } from './core';
 
-export class RizaAPIError extends Error {}
+export class RizaError extends Error {}
 
-export class APIError extends RizaAPIError {
+export class APIError extends RizaError {
   readonly status: number | undefined;
   readonly headers: Headers | undefined;
   readonly error: Object | undefined;

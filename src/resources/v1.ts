@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from '@stainless-temp/riza-api/core';
-import { APIResource } from '@stainless-temp/riza-api/resource';
-import * as V1API from '@stainless-temp/riza-api/resources/v1';
+import * as Core from '@riza-io/api/core';
+import { APIResource } from '@riza-io/api/resource';
+import * as V1API from '@riza-io/api/resources/v1';
 
 export class V1 extends APIResource {
   execute(body: V1ExecuteParams, options?: Core.RequestOptions): Core.APIPromise<V1ExecuteResponse> {

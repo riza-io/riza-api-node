@@ -1,4 +1,4 @@
-import { APIClient } from '@stainless-temp/riza-api/core';
+import { APIClient } from '@riza-io/api/core';
 
 const { stringifyQuery } = APIClient.prototype as any;
 

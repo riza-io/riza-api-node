@@ -1,6 +1,6 @@
 import fs from 'fs';
-import { toFile, type ResponseLike } from '@stainless-temp/riza-api/uploads';
-import { File } from '@stainless-temp/riza-api/_shims/index';
+import { toFile, type ResponseLike } from '@riza-io/api/uploads';
+import { File } from '@riza-io/api/_shims/index';
 
 class MyClass {
   name: string = 'foo';

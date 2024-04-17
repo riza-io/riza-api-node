@@ -4,18 +4,18 @@ import * as Core from './core';
 import * as Errors from './error';
 import { type Agent } from './_shims/index';
 import * as Uploads from './uploads';
-import * as API from '@stainless-temp/riza-api/resources/index';
+import * as API from '@riza-io/api/resources/index';
 
 export interface ClientOptions {
   /**
-   * Defaults to process.env['RIZA_API_BEARER_TOKEN'].
+   * Defaults to process.env['RIZA_AUTH_TOKEN'].
    */
-  bearerToken?: string | undefined;
+  authToken?: string | undefined;
 
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
    *
-   * Defaults to process.env['RIZA_API_BASE_URL'].
+   * Defaults to process.env['RIZA_BASE_URL'].
    */
   baseURL?: string | null | undefined;
 
@@ -69,17 +69,17 @@ export interface ClientOptions {
   defaultQuery?: Core.DefaultQuery;
 }
 
-/** API Client for interfacing with the Riza API API. */
-export class RizaAPI extends Core.APIClient {
-  bearerToken: string;
+/** API Client for interfacing with the Riza API. */
+export class Riza extends Core.APIClient {
+  authToken: string;
 
   private _options: ClientOptions;
 
   /**
-   * API Client for interfacing with the Riza API API.
+   * API Client for interfacing with the Riza API.
    *
-   * @param {string | undefined} [opts.bearerToken=process.env['RIZA_API_BEARER_TOKEN'] ?? undefined]
-   * @param {string} [opts.baseURL=process.env['RIZA_API_BASE_URL'] ?? https://localhost:8080/test-api] - Override the default base URL for the API.
+   * @param {string | undefined} [opts.authToken=process.env['RIZA_AUTH_TOKEN'] ?? undefined]
+   * @param {string} [opts.baseURL=process.env['RIZA_BASE_URL'] ?? https://api.riza.io] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
    * @param {Core.Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -88,20 +88,20 @@ export class RizaAPI extends Core.APIClient {
    * @param {Core.DefaultQuery} opts.defaultQuery - Default query parameters to include with every request to the API.
    */
   constructor({
-    baseURL = Core.readEnv('RIZA_API_BASE_URL'),
-    bearerToken = Core.readEnv('RIZA_API_BEARER_TOKEN'),
+    baseURL = Core.readEnv('RIZA_BASE_URL'),
+    authToken = Core.readEnv('RIZA_AUTH_TOKEN'),
     ...opts
   }: ClientOptions = {}) {
-    if (bearerToken === undefined) {
-      throw new Errors.RizaAPIError(
-        "The RIZA_API_BEARER_TOKEN environment variable is missing or empty; either provide it, or instantiate the RizaAPI client with an bearerToken option, like new RizaAPI({ bearerToken: 'My Bearer Token' }).",
+    if (authToken === undefined) {
+      throw new Errors.RizaError(
+        "The RIZA_AUTH_TOKEN environment variable is missing or empty; either provide it, or instantiate the Riza client with an authToken option, like new Riza({ authToken: 'My Auth Token' }).",
       );
     }
 
     const options: ClientOptions = {
-      bearerToken,
+      authToken,
       ...opts,
-      baseURL: baseURL || `https://localhost:8080/test-api`,
+      baseURL: baseURL || `https://api.riza.io`,
     };
 
     super({
@@ -113,7 +113,7 @@ export class RizaAPI extends Core.APIClient {
     });
     this._options = options;
 
-    this.bearerToken = bearerToken;
+    this.authToken = authToken;
   }
 
   v1: API.V1 = new API.V1(this);
@@ -130,12 +130,12 @@ export class RizaAPI extends Core.APIClient {
   }
 
   protected override authHeaders(opts: Core.FinalRequestOptions): Core.Headers {
-    return { Authorization: `Bearer ${this.bearerToken}` };
+    return { Authorization: `Bearer ${this.authToken}` };
   }
 
-  static RizaAPI = this;
+  static Riza = this;
 
-  static RizaAPIError = Errors.RizaAPIError;
+  static RizaError = Errors.RizaError;
   static APIError = Errors.APIError;
   static APIConnectionError = Errors.APIConnectionError;
   static APIConnectionTimeoutError = Errors.APIConnectionTimeoutError;
@@ -151,7 +151,7 @@ export class RizaAPI extends Core.APIClient {
 }
 
 export const {
-  RizaAPIError,
+  RizaError,
   APIError,
   APIConnectionError,
   APIConnectionTimeoutError,
@@ -169,7 +169,7 @@ export const {
 export import toFile = Uploads.toFile;
 export import fileFromPath = Uploads.fileFromPath;
 
-export namespace RizaAPI {
+export namespace Riza {
   // Helper functions
   export import toFile = Uploads.toFile;
   export import fileFromPath = Uploads.fileFromPath;
@@ -181,4 +181,4 @@ export namespace RizaAPI {
   export import V1ExecuteParams = API.V1ExecuteParams;
 }
 
-export default RizaAPI;
+export default Riza;

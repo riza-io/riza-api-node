@@ -6,9 +6,9 @@
     "rootDir": "./deno",
     "lib": ["es2020", "DOM"],
     "paths": {
-      "@stainless-temp/riza-api/_shims/auto/*": ["deno/_shims/auto/*-deno"],
-      "@stainless-temp/riza-api/*": ["deno/*"],
-      "@stainless-temp/riza-api": ["deno/index.ts"],
+      "@riza-io/api/_shims/auto/*": ["deno/_shims/auto/*-deno"],
+      "@riza-io/api/*": ["deno/*"],
+      "@riza-io/api": ["deno/index.ts"],
     },
     "noEmit": true,
     "declaration": true,

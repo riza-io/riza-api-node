@@ -4,9 +4,9 @@ const config: JestConfigWithTsJest = {
   preset: 'ts-jest/presets/default-esm',
   testEnvironment: 'node',
   moduleNameMapper: {
-    '^@stainless-temp/riza-api$': '<rootDir>/src/index.ts',
-    '^@stainless-temp/riza-api/_shims/auto/(.*)$': '<rootDir>/src/_shims/auto/$1-node',
-    '^@stainless-temp/riza-api/(.*)$': '<rootDir>/src/$1',
+    '^@riza-io/api$': '<rootDir>/src/index.ts',
+    '^@riza-io/api/_shims/auto/(.*)$': '<rootDir>/src/_shims/auto/$1-node',
+    '^@riza-io/api/(.*)$': '<rootDir>/src/$1',
   },
   modulePathIgnorePatterns: [
     '<rootDir>/ecosystem-tests/',
