@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "@stainless-temp/riza-api/*": ["dist/src/*"],
-      "@stainless-temp/riza-api": ["dist/src/index.ts"],
+      "@riza-io/api/*": ["dist/src/*"],
+      "@riza-io/api": ["dist/src/index.ts"],
     },
     "noEmit": false,
     "declaration": true,

@@ -1,5 +1,5 @@
-import { createResponseHeaders } from '@stainless-temp/riza-api/core';
-import { Headers } from '@stainless-temp/riza-api/_shims/index';
+import { createResponseHeaders } from '@riza-io/api/core';
+import { Headers } from '@riza-io/api/_shims/index';
 
 describe('response parsing', () => {
   // TODO: test unicode characters

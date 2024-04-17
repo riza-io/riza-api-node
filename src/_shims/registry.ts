@@ -42,12 +42,12 @@ export let isFsReadStream: Shims['isFsReadStream'] | undefined = undefined;
 export function setShims(shims: Shims, options: { auto: boolean } = { auto: false }) {
   if (auto) {
     throw new Error(
-      `you must \`import '@stainless-temp/riza-api/shims/${shims.kind}'\` before importing anything else from @stainless-temp/riza-api`,
+      `you must \`import '@riza-io/api/shims/${shims.kind}'\` before importing anything else from @riza-io/api`,
     );
   }
   if (kind) {
     throw new Error(
-      `can't \`import '@stainless-temp/riza-api/shims/${shims.kind}'\` after \`import '@stainless-temp/riza-api/shims/${kind}'\``,
+      `can't \`import '@riza-io/api/shims/${shims.kind}'\` after \`import '@riza-io/api/shims/${kind}'\``,
     );
   }
   auto = options.auto;

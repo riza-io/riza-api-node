@@ -1,16 +1,16 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import RizaAPI from '@stainless-temp/riza-api';
+import Riza from '@riza-io/api';
 import { Response } from 'node-fetch';
 
-const rizaAPI = new RizaAPI({
-  bearerToken: 'My Bearer Token',
+const riza = new Riza({
+  authToken: 'My Auth Token',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
 describe('resource v1', () => {
   test('execute', async () => {
-    const responsePromise = rizaAPI.v1.execute({});
+    const responsePromise = riza.v1.execute({});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;

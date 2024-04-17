@@ -4,8 +4,8 @@
 /**
  * Types will get added to this namespace when you import one of the following:
  *
- *   import '@stainless-temp/riza-api/shims/node'
- *   import '@stainless-temp/riza-api/shims/web'
+ *   import '@riza-io/api/shims/node'
+ *   import '@riza-io/api/shims/web'
  *
  * Importing more than one will cause type and runtime errors.
  */

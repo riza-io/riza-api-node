@@ -1,6 +1,6 @@
-import { multipartFormRequestOptions, createForm } from '@stainless-temp/riza-api/core';
-import { Blob } from '@stainless-temp/riza-api/_shims/index';
-import { toFile } from '@stainless-temp/riza-api';
+import { multipartFormRequestOptions, createForm } from '@riza-io/api/core';
+import { Blob } from '@riza-io/api/_shims/index';
+import { toFile } from '@riza-io/api';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {
