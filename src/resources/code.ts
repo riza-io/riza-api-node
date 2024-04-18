@@ -11,7 +11,7 @@ export class Code extends APIResource {
 }
 
 export interface CodeExecuteResponse {
-  exitCode?: string;
+  exit_code?: number;
 
   stderr?: string;
 

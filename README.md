@@ -23,13 +23,13 @@ The full API of this library can be found in [api.md](api.md).
 import Riza from '@riza-io/api';
 
 const riza = new Riza({
-  authToken: process.env['RIZA_AUTH_TOKEN'], // This is the default and can be omitted
+  apiKey: process.env['RIZA_API_KEY'], // This is the default and can be omitted
 });
 
 async function main() {
   const codeExecuteResponse = await riza.code.execute();
 
-  console.log(codeExecuteResponse.exitCode);
+  console.log(codeExecuteResponse.exit_code);
 }
 
 main();
@@ -44,7 +44,7 @@ This library includes TypeScript definitions for all request params and response
 import Riza from '@riza-io/api';
 
 const riza = new Riza({
-  authToken: process.env['RIZA_AUTH_TOKEN'], // This is the default and can be omitted
+  apiKey: process.env['RIZA_API_KEY'], // This is the default and can be omitted
 });
 
 async function main() {
@@ -152,7 +152,7 @@ console.log(response.statusText); // access the underlying Response object
 
 const { data: codeExecuteResponse, response: raw } = await riza.code.execute().withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(codeExecuteResponse.exitCode);
+console.log(codeExecuteResponse.exit_code);
 ```
 
 ### Making custom/undocumented requests

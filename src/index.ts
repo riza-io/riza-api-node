@@ -8,9 +8,9 @@ import * as API from '@riza-io/api/resources/index';
 
 export interface ClientOptions {
   /**
-   * Defaults to process.env['RIZA_AUTH_TOKEN'].
+   * Defaults to process.env['RIZA_API_KEY'].
    */
-  authToken?: string | undefined;
+  apiKey?: string | undefined;
 
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
@@ -71,14 +71,14 @@ export interface ClientOptions {
 
 /** API Client for interfacing with the Riza API. */
 export class Riza extends Core.APIClient {
-  authToken: string;
+  apiKey: string;
 
   private _options: ClientOptions;
 
   /**
    * API Client for interfacing with the Riza API.
    *
-   * @param {string | undefined} [opts.authToken=process.env['RIZA_AUTH_TOKEN'] ?? undefined]
+   * @param {string | undefined} [opts.apiKey=process.env['RIZA_API_KEY'] ?? undefined]
    * @param {string} [opts.baseURL=process.env['RIZA_BASE_URL'] ?? https://api.riza.io] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
@@ -89,17 +89,17 @@ export class Riza extends Core.APIClient {
    */
   constructor({
     baseURL = Core.readEnv('RIZA_BASE_URL'),
-    authToken = Core.readEnv('RIZA_AUTH_TOKEN'),
+    apiKey = Core.readEnv('RIZA_API_KEY'),
     ...opts
   }: ClientOptions = {}) {
-    if (authToken === undefined) {
+    if (apiKey === undefined) {
       throw new Errors.RizaError(
-        "The RIZA_AUTH_TOKEN environment variable is missing or empty; either provide it, or instantiate the Riza client with an authToken option, like new Riza({ authToken: 'My Auth Token' }).",
+        "The RIZA_API_KEY environment variable is missing or empty; either provide it, or instantiate the Riza client with an apiKey option, like new Riza({ apiKey: 'My API Key' }).",
       );
     }
 
     const options: ClientOptions = {
-      authToken,
+      apiKey,
       ...opts,
       baseURL: baseURL || `https://api.riza.io`,
     };
@@ -113,7 +113,7 @@ export class Riza extends Core.APIClient {
     });
     this._options = options;
 
-    this.authToken = authToken;
+    this.apiKey = apiKey;
   }
 
   code: API.Code = new API.Code(this);
@@ -130,7 +130,7 @@ export class Riza extends Core.APIClient {
   }
 
   protected override authHeaders(opts: Core.FinalRequestOptions): Core.Headers {
-    return { Authorization: `Bearer ${this.authToken}` };
+    return { Authorization: `Bearer ${this.apiKey}` };
   }
 
   static Riza = this;
