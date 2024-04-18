@@ -23,7 +23,7 @@ describe('instantiate client', () => {
     const client = new Riza({
       baseURL: 'http://localhost:5000/',
       defaultHeaders: { 'X-My-Default-Header': '2' },
-      authToken: 'My Auth Token',
+      apiKey: 'My API Key',
     });
 
     test('they are used in the request', () => {
@@ -55,7 +55,7 @@ describe('instantiate client', () => {
       const client = new Riza({
         baseURL: 'http://localhost:5000/',
         defaultQuery: { apiVersion: 'foo' },
-        authToken: 'My Auth Token',
+        apiKey: 'My API Key',
       });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/foo?apiVersion=foo');
     });
@@ -64,7 +64,7 @@ describe('instantiate client', () => {
       const client = new Riza({
         baseURL: 'http://localhost:5000/',
         defaultQuery: { apiVersion: 'foo', hello: 'world' },
-        authToken: 'My Auth Token',
+        apiKey: 'My API Key',
       });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/foo?apiVersion=foo&hello=world');
     });
@@ -73,7 +73,7 @@ describe('instantiate client', () => {
       const client = new Riza({
         baseURL: 'http://localhost:5000/',
         defaultQuery: { hello: 'world' },
-        authToken: 'My Auth Token',
+        apiKey: 'My API Key',
       });
       expect(client.buildURL('/foo', { hello: undefined })).toEqual('http://localhost:5000/foo');
     });
@@ -82,7 +82,7 @@ describe('instantiate client', () => {
   test('custom fetch', async () => {
     const client = new Riza({
       baseURL: 'http://localhost:5000/',
-      authToken: 'My Auth Token',
+      apiKey: 'My API Key',
       fetch: (url) => {
         return Promise.resolve(
           new Response(JSON.stringify({ url, custom: true }), {
@@ -99,7 +99,7 @@ describe('instantiate client', () => {
   test('custom signal', async () => {
     const client = new Riza({
       baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
-      authToken: 'My Auth Token',
+      apiKey: 'My API Key',
       fetch: (...args) => {
         return new Promise((resolve, reject) =>
           setTimeout(
@@ -124,12 +124,12 @@ describe('instantiate client', () => {
 
   describe('baseUrl', () => {
     test('trailing slash', () => {
-      const client = new Riza({ baseURL: 'http://localhost:5000/custom/path/', authToken: 'My Auth Token' });
+      const client = new Riza({ baseURL: 'http://localhost:5000/custom/path/', apiKey: 'My API Key' });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/custom/path/foo');
     });
 
     test('no trailing slash', () => {
-      const client = new Riza({ baseURL: 'http://localhost:5000/custom/path', authToken: 'My Auth Token' });
+      const client = new Riza({ baseURL: 'http://localhost:5000/custom/path', apiKey: 'My API Key' });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/custom/path/foo');
     });
 
@@ -138,55 +138,55 @@ describe('instantiate client', () => {
     });
 
     test('explicit option', () => {
-      const client = new Riza({ baseURL: 'https://example.com', authToken: 'My Auth Token' });
+      const client = new Riza({ baseURL: 'https://example.com', apiKey: 'My API Key' });
       expect(client.baseURL).toEqual('https://example.com');
     });
 
     test('env variable', () => {
       process.env['RIZA_BASE_URL'] = 'https://example.com/from_env';
-      const client = new Riza({ authToken: 'My Auth Token' });
+      const client = new Riza({ apiKey: 'My API Key' });
       expect(client.baseURL).toEqual('https://example.com/from_env');
     });
 
     test('empty env variable', () => {
       process.env['RIZA_BASE_URL'] = ''; // empty
-      const client = new Riza({ authToken: 'My Auth Token' });
+      const client = new Riza({ apiKey: 'My API Key' });
       expect(client.baseURL).toEqual('https://api.riza.io');
     });
 
     test('blank env variable', () => {
       process.env['RIZA_BASE_URL'] = '  '; // blank
-      const client = new Riza({ authToken: 'My Auth Token' });
+      const client = new Riza({ apiKey: 'My API Key' });
       expect(client.baseURL).toEqual('https://api.riza.io');
     });
   });
 
   test('maxRetries option is correctly set', () => {
-    const client = new Riza({ maxRetries: 4, authToken: 'My Auth Token' });
+    const client = new Riza({ maxRetries: 4, apiKey: 'My API Key' });
     expect(client.maxRetries).toEqual(4);
 
     // default
-    const client2 = new Riza({ authToken: 'My Auth Token' });
+    const client2 = new Riza({ apiKey: 'My API Key' });
     expect(client2.maxRetries).toEqual(2);
   });
 
   test('with environment variable arguments', () => {
     // set options via env var
-    process.env['RIZA_AUTH_TOKEN'] = 'My Auth Token';
+    process.env['RIZA_API_KEY'] = 'My API Key';
     const client = new Riza();
-    expect(client.authToken).toBe('My Auth Token');
+    expect(client.apiKey).toBe('My API Key');
   });
 
   test('with overriden environment variable arguments', () => {
     // set options via env var
-    process.env['RIZA_AUTH_TOKEN'] = 'another My Auth Token';
-    const client = new Riza({ authToken: 'My Auth Token' });
-    expect(client.authToken).toBe('My Auth Token');
+    process.env['RIZA_API_KEY'] = 'another My API Key';
+    const client = new Riza({ apiKey: 'My API Key' });
+    expect(client.apiKey).toBe('My API Key');
   });
 });
 
 describe('request building', () => {
-  const client = new Riza({ authToken: 'My Auth Token' });
+  const client = new Riza({ apiKey: 'My API Key' });
 
   describe('Content-Length', () => {
     test('handles multi-byte characters', () => {
@@ -228,7 +228,7 @@ describe('retries', () => {
       return new Response(JSON.stringify({ a: 1 }), { headers: { 'Content-Type': 'application/json' } });
     };
 
-    const client = new Riza({ authToken: 'My Auth Token', timeout: 10, fetch: testFetch });
+    const client = new Riza({ apiKey: 'My API Key', timeout: 10, fetch: testFetch });
 
     expect(await client.request({ path: '/foo', method: 'get' })).toEqual({ a: 1 });
     expect(count).toEqual(2);
@@ -255,7 +255,7 @@ describe('retries', () => {
       return new Response(JSON.stringify({ a: 1 }), { headers: { 'Content-Type': 'application/json' } });
     };
 
-    const client = new Riza({ authToken: 'My Auth Token', fetch: testFetch });
+    const client = new Riza({ apiKey: 'My API Key', fetch: testFetch });
 
     expect(await client.request({ path: '/foo', method: 'get' })).toEqual({ a: 1 });
     expect(count).toEqual(2);
@@ -282,7 +282,7 @@ describe('retries', () => {
       return new Response(JSON.stringify({ a: 1 }), { headers: { 'Content-Type': 'application/json' } });
     };
 
-    const client = new Riza({ authToken: 'My Auth Token', fetch: testFetch });
+    const client = new Riza({ apiKey: 'My API Key', fetch: testFetch });
 
     expect(await client.request({ path: '/foo', method: 'get' })).toEqual({ a: 1 });
     expect(count).toEqual(2);
