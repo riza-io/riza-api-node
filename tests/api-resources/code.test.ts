@@ -8,9 +8,9 @@ const riza = new Riza({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource topLevel', () => {
+describe('resource code', () => {
   test('execute', async () => {
-    const responsePromise = riza.topLevel.execute({});
+    const responsePromise = riza.code.execute({});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;

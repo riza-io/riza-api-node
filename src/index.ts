@@ -116,7 +116,7 @@ export class Riza extends Core.APIClient {
     this.authToken = authToken;
   }
 
-  topLevel: API.TopLevel = new API.TopLevel(this);
+  code: API.Code = new API.Code(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -176,9 +176,9 @@ export namespace Riza {
 
   export import RequestOptions = Core.RequestOptions;
 
-  export import TopLevel = API.TopLevel;
-  export import TopLevelExecuteResponse = API.TopLevelExecuteResponse;
-  export import TopLevelExecuteParams = API.TopLevelExecuteParams;
+  export import Code = API.Code;
+  export import CodeExecuteResponse = API.CodeExecuteResponse;
+  export import CodeExecuteParams = API.CodeExecuteParams;
 }
 
 export default Riza;
