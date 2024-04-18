@@ -1,9 +1,9 @@
-# Code
+# Sandbox
 
 Types:
 
-- <code><a href="./src/resources/code.ts">CodeExecuteResponse</a></code>
+- <code><a href="./src/resources/sandbox.ts">SandboxExecuteResponse</a></code>
 
 Methods:
 
-- <code title="post /v1/execute">client.code.<a href="./src/resources/code.ts">execute</a>({ ...params }) -> CodeExecuteResponse</code>
+- <code title="post /v1/execute">client.sandbox.<a href="./src/resources/sandbox.ts">execute</a>({ ...params }) -> SandboxExecuteResponse</code>

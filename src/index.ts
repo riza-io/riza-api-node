@@ -116,7 +116,7 @@ export class Riza extends Core.APIClient {
     this.apiKey = apiKey;
   }
 
-  code: API.Code = new API.Code(this);
+  sandbox: API.Sandbox = new API.Sandbox(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -176,9 +176,9 @@ export namespace Riza {
 
   export import RequestOptions = Core.RequestOptions;
 
-  export import Code = API.Code;
-  export import CodeExecuteResponse = API.CodeExecuteResponse;
-  export import CodeExecuteParams = API.CodeExecuteParams;
+  export import Sandbox = API.Sandbox;
+  export import SandboxExecuteResponse = API.SandboxExecuteResponse;
+  export import SandboxExecuteParams = API.SandboxExecuteParams;
 }
 
 export default Riza;
