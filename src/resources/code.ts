@@ -2,18 +2,15 @@
 
 import * as Core from '@riza-io/api/core';
 import { APIResource } from '@riza-io/api/resource';
-import * as TopLevelAPI from '@riza-io/api/resources/top-level';
+import * as CodeAPI from '@riza-io/api/resources/code';
 
-export class TopLevel extends APIResource {
-  execute(
-    body: TopLevelExecuteParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<TopLevelExecuteResponse> {
+export class Code extends APIResource {
+  execute(body: CodeExecuteParams, options?: Core.RequestOptions): Core.APIPromise<CodeExecuteResponse> {
     return this._client.post('/v1/execute', { body, ...options });
   }
 }
 
-export interface TopLevelExecuteResponse {
+export interface CodeExecuteResponse {
   exitCode?: string;
 
   stderr?: string;
@@ -21,7 +18,7 @@ export interface TopLevelExecuteResponse {
   stdout?: string;
 }
 
-export interface TopLevelExecuteParams {
+export interface CodeExecuteParams {
   args?: Array<string>;
 
   code?: string;
@@ -33,7 +30,7 @@ export interface TopLevelExecuteParams {
   stdin?: string;
 }
 
-export namespace TopLevel {
-  export import TopLevelExecuteResponse = TopLevelAPI.TopLevelExecuteResponse;
-  export import TopLevelExecuteParams = TopLevelAPI.TopLevelExecuteParams;
+export namespace Code {
+  export import CodeExecuteResponse = CodeAPI.CodeExecuteResponse;
+  export import CodeExecuteParams = CodeAPI.CodeExecuteParams;
 }

@@ -27,9 +27,9 @@ const riza = new Riza({
 });
 
 async function main() {
-  const topLevelExecuteResponse = await riza.topLevel.execute();
+  const codeExecuteResponse = await riza.code.execute();
 
-  console.log(topLevelExecuteResponse.exitCode);
+  console.log(codeExecuteResponse.exitCode);
 }
 
 main();
@@ -48,7 +48,7 @@ const riza = new Riza({
 });
 
 async function main() {
-  const topLevelExecuteResponse: Riza.TopLevelExecuteResponse = await riza.topLevel.execute();
+  const codeExecuteResponse: Riza.CodeExecuteResponse = await riza.code.execute();
 }
 
 main();
@@ -65,7 +65,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const topLevelExecuteResponse = await riza.topLevel.execute().catch(async (err) => {
+  const codeExecuteResponse = await riza.code.execute().catch(async (err) => {
     if (err instanceof Riza.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -108,7 +108,7 @@ const riza = new Riza({
 });
 
 // Or, configure per-request:
-await riza.topLevel.execute({
+await riza.code.execute({
   maxRetries: 5,
 });
 ```
@@ -125,7 +125,7 @@ const riza = new Riza({
 });
 
 // Override per-request:
-await riza.topLevel.execute({
+await riza.code.execute({
   timeout: 5 * 1000,
 });
 ```
@@ -146,13 +146,13 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const riza = new Riza();
 
-const response = await riza.topLevel.execute().asResponse();
+const response = await riza.code.execute().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: topLevelExecuteResponse, response: raw } = await riza.topLevel.execute().withResponse();
+const { data: codeExecuteResponse, response: raw } = await riza.code.execute().withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(topLevelExecuteResponse.exitCode);
+console.log(codeExecuteResponse.exitCode);
 ```
 
 ### Making custom/undocumented requests
@@ -256,7 +256,7 @@ const riza = new Riza({
 });
 
 // Override per-request:
-await riza.topLevel.execute({
+await riza.code.execute({
   httpAgent: new http.Agent({ keepAlive: false }),
 });
 ```
