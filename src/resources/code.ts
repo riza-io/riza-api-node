@@ -2,23 +2,23 @@
 
 import * as Core from '@riza-io/api/core';
 import { APIResource } from '@riza-io/api/resource';
-import * as V1API from '@riza-io/api/resources/v1';
+import * as CodeAPI from '@riza-io/api/resources/code';
 
-export class V1 extends APIResource {
-  execute(body: V1ExecuteParams, options?: Core.RequestOptions): Core.APIPromise<V1ExecuteResponse> {
+export class Code extends APIResource {
+  execute(body: CodeExecuteParams, options?: Core.RequestOptions): Core.APIPromise<CodeExecuteResponse> {
     return this._client.post('/v1/execute', { body, ...options });
   }
 }
 
-export interface V1ExecuteResponse {
-  exitCode?: string;
+export interface CodeExecuteResponse {
+  exit_code?: number;
 
   stderr?: string;
 
   stdout?: string;
 }
 
-export interface V1ExecuteParams {
+export interface CodeExecuteParams {
   args?: Array<string>;
 
   code?: string;
@@ -30,7 +30,7 @@ export interface V1ExecuteParams {
   stdin?: string;
 }
 
-export namespace V1 {
-  export import V1ExecuteResponse = V1API.V1ExecuteResponse;
-  export import V1ExecuteParams = V1API.V1ExecuteParams;
+export namespace Code {
+  export import CodeExecuteResponse = CodeAPI.CodeExecuteResponse;
+  export import CodeExecuteParams = CodeAPI.CodeExecuteParams;
 }

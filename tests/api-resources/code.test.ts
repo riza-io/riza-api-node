@@ -4,13 +4,13 @@ import Riza from '@riza-io/api';
 import { Response } from 'node-fetch';
 
 const riza = new Riza({
-  authToken: 'My Auth Token',
+  apiKey: 'My API Key',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource v1', () => {
+describe('resource code', () => {
   test('execute', async () => {
-    const responsePromise = riza.v1.execute({});
+    const responsePromise = riza.code.execute({});
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;

@@ -1,9 +1,9 @@
-# V1
+# Code
 
 Types:
 
-- <code><a href="./src/resources/v1.ts">V1ExecuteResponse</a></code>
+- <code><a href="./src/resources/code.ts">CodeExecuteResponse</a></code>
 
 Methods:
 
-- <code title="post /v1/execute">client.v1.<a href="./src/resources/v1.ts">execute</a>({ ...params }) -> V1ExecuteResponse</code>
+- <code title="post /v1/execute">client.code.<a href="./src/resources/code.ts">execute</a>({ ...params }) -> CodeExecuteResponse</code>

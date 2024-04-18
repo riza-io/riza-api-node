@@ -23,13 +23,13 @@ The full API of this library can be found in [api.md](api.md).
 import Riza from '@riza-io/api';
 
 const riza = new Riza({
-  authToken: process.env['RIZA_AUTH_TOKEN'], // This is the default and can be omitted
+  apiKey: process.env['RIZA_API_KEY'], // This is the default and can be omitted
 });
 
 async function main() {
-  const v1ExecuteResponse = await riza.v1.execute();
+  const codeExecuteResponse = await riza.code.execute();
 
-  console.log(v1ExecuteResponse.exitCode);
+  console.log(codeExecuteResponse.exit_code);
 }
 
 main();
@@ -44,11 +44,11 @@ This library includes TypeScript definitions for all request params and response
 import Riza from '@riza-io/api';
 
 const riza = new Riza({
-  authToken: process.env['RIZA_AUTH_TOKEN'], // This is the default and can be omitted
+  apiKey: process.env['RIZA_API_KEY'], // This is the default and can be omitted
 });
 
 async function main() {
-  const v1ExecuteResponse: Riza.V1ExecuteResponse = await riza.v1.execute();
+  const codeExecuteResponse: Riza.CodeExecuteResponse = await riza.code.execute();
 }
 
 main();
@@ -65,7 +65,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const v1ExecuteResponse = await riza.v1.execute().catch(async (err) => {
+  const codeExecuteResponse = await riza.code.execute().catch(async (err) => {
     if (err instanceof Riza.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -108,7 +108,7 @@ const riza = new Riza({
 });
 
 // Or, configure per-request:
-await riza.v1.execute({
+await riza.code.execute({
   maxRetries: 5,
 });
 ```
@@ -125,7 +125,7 @@ const riza = new Riza({
 });
 
 // Override per-request:
-await riza.v1.execute({
+await riza.code.execute({
   timeout: 5 * 1000,
 });
 ```
@@ -146,13 +146,13 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const riza = new Riza();
 
-const response = await riza.v1.execute().asResponse();
+const response = await riza.code.execute().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: v1ExecuteResponse, response: raw } = await riza.v1.execute().withResponse();
+const { data: codeExecuteResponse, response: raw } = await riza.code.execute().withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(v1ExecuteResponse.exitCode);
+console.log(codeExecuteResponse.exit_code);
 ```
 
 ### Making custom/undocumented requests
@@ -256,7 +256,7 @@ const riza = new Riza({
 });
 
 // Override per-request:
-await riza.v1.execute({
+await riza.code.execute({
   httpAgent: new http.Agent({ keepAlive: false }),
 });
 ```
