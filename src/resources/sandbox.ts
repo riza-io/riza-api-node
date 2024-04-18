@@ -2,15 +2,18 @@
 
 import * as Core from '@riza-io/api/core';
 import { APIResource } from '@riza-io/api/resource';
-import * as CodeAPI from '@riza-io/api/resources/code';
+import * as SandboxAPI from '@riza-io/api/resources/sandbox';
 
-export class Code extends APIResource {
-  execute(body: CodeExecuteParams, options?: Core.RequestOptions): Core.APIPromise<CodeExecuteResponse> {
+export class Sandbox extends APIResource {
+  execute(
+    body: SandboxExecuteParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<SandboxExecuteResponse> {
     return this._client.post('/v1/execute', { body, ...options });
   }
 }
 
-export interface CodeExecuteResponse {
+export interface SandboxExecuteResponse {
   exit_code?: number;
 
   stderr?: string;
@@ -18,7 +21,7 @@ export interface CodeExecuteResponse {
   stdout?: string;
 }
 
-export interface CodeExecuteParams {
+export interface SandboxExecuteParams {
   args?: Array<string>;
 
   code?: string;
@@ -30,7 +33,7 @@ export interface CodeExecuteParams {
   stdin?: string;
 }
 
-export namespace Code {
-  export import CodeExecuteResponse = CodeAPI.CodeExecuteResponse;
-  export import CodeExecuteParams = CodeAPI.CodeExecuteParams;
+export namespace Sandbox {
+  export import SandboxExecuteResponse = SandboxAPI.SandboxExecuteResponse;
+  export import SandboxExecuteParams = SandboxAPI.SandboxExecuteParams;
 }
