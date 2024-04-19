@@ -9,8 +9,8 @@ const riza = new Riza({
 });
 
 describe('resource sandbox', () => {
-  test('execute', async () => {
-    const responsePromise = riza.sandbox.execute({});
+  test('execute: only required params', async () => {
+    const responsePromise = riza.sandbox.execute({ code: 'print("Hello world!")', language: 'PYTHON' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -18,5 +18,15 @@ describe('resource sandbox', () => {
     const dataAndResponse = await responsePromise.withResponse();
     expect(dataAndResponse.data).toBe(response);
     expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('execute: required and optional params', async () => {
+    const response = await riza.sandbox.execute({
+      code: 'print("Hello world!")',
+      language: 'PYTHON',
+      args: ['string', 'string', 'string'],
+      env: { foo: 'string' },
+      stdin: 'string',
+    });
   });
 });
