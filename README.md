@@ -27,7 +27,10 @@ const riza = new Riza({
 });
 
 async function main() {
-  const sandboxExecuteResponse = await riza.sandbox.execute();
+  const sandboxExecuteResponse = await riza.sandbox.execute({
+    code: 'print("Hello world!")',
+    language: 'PYTHON',
+  });
 
   console.log(sandboxExecuteResponse.exit_code);
 }
@@ -48,7 +51,8 @@ const riza = new Riza({
 });
 
 async function main() {
-  const sandboxExecuteResponse: Riza.SandboxExecuteResponse = await riza.sandbox.execute();
+  const params: Riza.SandboxExecuteParams = { code: 'print("Hello world!")', language: 'PYTHON' };
+  const sandboxExecuteResponse: Riza.SandboxExecuteResponse = await riza.sandbox.execute(params);
 }
 
 main();
@@ -65,15 +69,17 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const sandboxExecuteResponse = await riza.sandbox.execute().catch(async (err) => {
-    if (err instanceof Riza.APIError) {
-      console.log(err.status); // 400
-      console.log(err.name); // BadRequestError
-      console.log(err.headers); // {server: 'nginx', ...}
-    } else {
-      throw err;
-    }
-  });
+  const sandboxExecuteResponse = await riza.sandbox
+    .execute({ code: 'print("Hello world!")', language: 'PYTHON' })
+    .catch(async (err) => {
+      if (err instanceof Riza.APIError) {
+        console.log(err.status); // 400
+        console.log(err.name); // BadRequestError
+        console.log(err.headers); // {server: 'nginx', ...}
+      } else {
+        throw err;
+      }
+    });
 }
 
 main();
@@ -108,7 +114,7 @@ const riza = new Riza({
 });
 
 // Or, configure per-request:
-await riza.sandbox.execute({
+await riza.sandbox.execute({ code: 'print("Hello world!")', language: 'PYTHON' }, {
   maxRetries: 5,
 });
 ```
@@ -125,7 +131,7 @@ const riza = new Riza({
 });
 
 // Override per-request:
-await riza.sandbox.execute({
+await riza.sandbox.execute({ code: 'print("Hello world!")', language: 'PYTHON' }, {
   timeout: 5 * 1000,
 });
 ```
@@ -146,11 +152,15 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const riza = new Riza();
 
-const response = await riza.sandbox.execute().asResponse();
+const response = await riza.sandbox
+  .execute({ code: 'print("Hello world!")', language: 'PYTHON' })
+  .asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: sandboxExecuteResponse, response: raw } = await riza.sandbox.execute().withResponse();
+const { data: sandboxExecuteResponse, response: raw } = await riza.sandbox
+  .execute({ code: 'print("Hello world!")', language: 'PYTHON' })
+  .withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(sandboxExecuteResponse.exit_code);
 ```
@@ -256,9 +266,12 @@ const riza = new Riza({
 });
 
 // Override per-request:
-await riza.sandbox.execute({
-  httpAgent: new http.Agent({ keepAlive: false }),
-});
+await riza.sandbox.execute(
+  { code: 'print("Hello world!")', language: 'PYTHON' },
+  {
+    httpAgent: new http.Agent({ keepAlive: false }),
+  },
+);
 ```
 
 ## Semantic versioning
