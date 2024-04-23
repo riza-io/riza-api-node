@@ -1,9 +1,9 @@
-# Sandbox
+# Command
 
 Types:
 
-- <code><a href="./src/resources/sandbox.ts">SandboxExecuteResponse</a></code>
+- <code><a href="./src/resources/command.ts">CommandExecResponse</a></code>
 
 Methods:
 
-- <code title="post /v1/execute">client.sandbox.<a href="./src/resources/sandbox.ts">execute</a>({ ...params }) -> SandboxExecuteResponse</code>
+- <code title="post /v1/execute">client.command.<a href="./src/resources/command.ts">exec</a>({ ...params }) -> CommandExecResponse</code>
