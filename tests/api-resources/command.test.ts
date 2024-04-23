@@ -8,9 +8,9 @@ const riza = new Riza({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource sandbox', () => {
-  test('execute: only required params', async () => {
-    const responsePromise = riza.sandbox.execute({ code: 'print("Hello world!")', language: 'PYTHON' });
+describe('resource command', () => {
+  test('exec: only required params', async () => {
+    const responsePromise = riza.command.exec({ code: 'print("Hello world!")', language: 'PYTHON' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -20,8 +20,8 @@ describe('resource sandbox', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('execute: required and optional params', async () => {
-    const response = await riza.sandbox.execute({
+  test('exec: required and optional params', async () => {
+    const response = await riza.command.exec({
       code: 'print("Hello world!")',
       language: 'PYTHON',
       args: ['string', 'string', 'string'],

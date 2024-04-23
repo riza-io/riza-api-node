@@ -2,23 +2,20 @@
 
 import * as Core from '@riza-io/api/core';
 import { APIResource } from '@riza-io/api/resource';
-import * as SandboxAPI from '@riza-io/api/resources/sandbox';
+import * as CommandAPI from '@riza-io/api/resources/command';
 
-export class Sandbox extends APIResource {
+export class Command extends APIResource {
   /**
    * Run a script in a secure, isolated sandbox. Scripts can read from stdin and
    * write to stdout or stderr. They can access environment variables and command
    * line arguments.
    */
-  execute(
-    body: SandboxExecuteParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<SandboxExecuteResponse> {
+  exec(body: CommandExecParams, options?: Core.RequestOptions): Core.APIPromise<CommandExecResponse> {
     return this._client.post('/v1/execute', { body, ...options });
   }
 }
 
-export interface SandboxExecuteResponse {
+export interface CommandExecResponse {
   /**
    * The exit code returned by the script. Will be `0` on success and non-zero on
    * failure.
@@ -36,7 +33,7 @@ export interface SandboxExecuteResponse {
   stdout?: string;
 }
 
-export interface SandboxExecuteParams {
+export interface CommandExecParams {
   /**
    * The code to execute in the sandbox.
    */
@@ -63,7 +60,7 @@ export interface SandboxExecuteParams {
   stdin?: string;
 }
 
-export namespace Sandbox {
-  export import SandboxExecuteResponse = SandboxAPI.SandboxExecuteResponse;
-  export import SandboxExecuteParams = SandboxAPI.SandboxExecuteParams;
+export namespace Command {
+  export import CommandExecResponse = CommandAPI.CommandExecResponse;
+  export import CommandExecParams = CommandAPI.CommandExecParams;
 }

@@ -1,3 +1,3 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { SandboxExecuteResponse, SandboxExecuteParams, Sandbox } from './sandbox';
+export { CommandExecResponse, CommandExecParams, Command } from './command';
