@@ -26,6 +26,7 @@ describe('resource command', () => {
       language: 'PYTHON',
       args: ['string', 'string', 'string'],
       env: { foo: 'string' },
+      net: ['string', 'string', 'string'],
       stdin: 'string',
     });
   });

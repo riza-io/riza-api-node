@@ -55,6 +55,11 @@ export interface CommandExecParams {
   env?: Record<string, string>;
 
   /**
+   * List of allowed hosts for HTTP requests
+   */
+  net?: Array<string>;
+
+  /**
    * Input to pass to the script via `stdin`.
    */
   stdin?: string;
