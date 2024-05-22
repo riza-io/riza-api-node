@@ -24,6 +24,7 @@ describe('resource command', () => {
     const response = await riza.command.exec({
       code: 'print("Hello world!")',
       language: 'PYTHON',
+      allow_http_hosts: ['string', 'string', 'string'],
       args: ['string', 'string', 'string'],
       env: { foo: 'string' },
       stdin: 'string',
