@@ -27,7 +27,7 @@ const riza = new Riza({
 });
 
 async function main() {
-  const commandExecResponse = await riza.command.exec({ code: 'print("Hello world!")', language: 'PYTHON' });
+  const commandExecResponse = await riza.command.exec({ code: 'print("Hello world!")' });
 
   console.log(commandExecResponse.exit_code);
 }
@@ -48,7 +48,7 @@ const riza = new Riza({
 });
 
 async function main() {
-  const params: Riza.CommandExecParams = { code: 'print("Hello world!")', language: 'PYTHON' };
+  const params: Riza.CommandExecParams = { code: 'print("Hello world!")' };
   const commandExecResponse: Riza.CommandExecResponse = await riza.command.exec(params);
 }
 
@@ -67,7 +67,7 @@ a subclass of `APIError` will be thrown:
 ```ts
 async function main() {
   const commandExecResponse = await riza.command
-    .exec({ code: 'print("Hello world!")', language: 'PYTHON' })
+    .exec({ code: 'print("Hello world!")' })
     .catch(async (err) => {
       if (err instanceof Riza.APIError) {
         console.log(err.status); // 400
@@ -111,7 +111,7 @@ const riza = new Riza({
 });
 
 // Or, configure per-request:
-await riza.command.exec({ code: 'print("Hello world!")', language: 'PYTHON' }, {
+await riza.command.exec({ code: 'print("Hello world!")' }, {
   maxRetries: 5,
 });
 ```
@@ -128,7 +128,7 @@ const riza = new Riza({
 });
 
 // Override per-request:
-await riza.command.exec({ code: 'print("Hello world!")', language: 'PYTHON' }, {
+await riza.command.exec({ code: 'print("Hello world!")' }, {
   timeout: 5 * 1000,
 });
 ```
@@ -149,12 +149,12 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const riza = new Riza();
 
-const response = await riza.command.exec({ code: 'print("Hello world!")', language: 'PYTHON' }).asResponse();
+const response = await riza.command.exec({ code: 'print("Hello world!")' }).asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
 const { data: commandExecResponse, response: raw } = await riza.command
-  .exec({ code: 'print("Hello world!")', language: 'PYTHON' })
+  .exec({ code: 'print("Hello world!")' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(commandExecResponse.exit_code);
@@ -262,7 +262,7 @@ const riza = new Riza({
 
 // Override per-request:
 await riza.command.exec(
-  { code: 'print("Hello world!")', language: 'PYTHON' },
+  { code: 'print("Hello world!")' },
   {
     httpAgent: new http.Agent({ keepAlive: false }),
   },
