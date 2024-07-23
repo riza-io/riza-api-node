@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.7 (2024-07-23)
+
+Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/riza-io/riza-api-node/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
+
+### Features
+
+* **api:** OpenAPI spec update via Stainless API ([#17](https://github.com/riza-io/riza-api-node/issues/17)) ([534a73e](https://github.com/riza-io/riza-api-node/commit/534a73ece4c3730ea3a74ba4e65da30901fc0fdd))
+
+
+### Chores
+
+* **docs:** mention support of web browser runtimes ([#21](https://github.com/riza-io/riza-api-node/issues/21)) ([d538c1e](https://github.com/riza-io/riza-api-node/commit/d538c1e3fd9391f17c629cbbcff3965b06daa74e))
+* **docs:** minor update to formatting of API link in README ([#20](https://github.com/riza-io/riza-api-node/issues/20)) ([29367ce](https://github.com/riza-io/riza-api-node/commit/29367ce68e828a54a64e881d7e53ac20ebbe90a5))
+* **internal:** codegen related update ([#18](https://github.com/riza-io/riza-api-node/issues/18)) ([6d55d22](https://github.com/riza-io/riza-api-node/commit/6d55d221fae055bacada3d342728a1c0db46cd48))
+
 ## 0.1.0-alpha.6 (2024-05-22)
 
 Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/riza-io/riza-api-node/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)

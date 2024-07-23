@@ -1,10 +1,10 @@
 # Riza Node API Library
 
-[![NPM version](https://img.shields.io/npm/v/@riza-io/api.svg)](https://npmjs.org/package/@riza-io/api)
+[![NPM version](https://img.shields.io/npm/v/@riza-io/api.svg)](https://npmjs.org/package/@riza-io/api) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@riza-io/api)
 
 This library provides convenient access to the Riza REST API from server-side TypeScript or JavaScript.
 
-The REST API documentation can be found [on docs.riza.io](https://docs.riza.io). The full API of this library can be found in [api.md](api.md).
+The REST API documentation can be found on [docs.riza.io](https://docs.riza.io). The full API of this library can be found in [api.md](api.md).
 
 It is generated with [Stainless](https://www.stainlessapi.com/).
 
@@ -27,7 +27,7 @@ const riza = new Riza({
 });
 
 async function main() {
-  const commandExecResponse = await riza.command.exec({ code: 'print("Hello world!")', language: 'PYTHON' });
+  const commandExecResponse = await riza.command.exec({ code: 'print("Hello world!")' });
 
   console.log(commandExecResponse.exit_code);
 }
@@ -48,7 +48,7 @@ const riza = new Riza({
 });
 
 async function main() {
-  const params: Riza.CommandExecParams = { code: 'print("Hello world!")', language: 'PYTHON' };
+  const params: Riza.CommandExecParams = { code: 'print("Hello world!")' };
   const commandExecResponse: Riza.CommandExecResponse = await riza.command.exec(params);
 }
 
@@ -67,7 +67,7 @@ a subclass of `APIError` will be thrown:
 ```ts
 async function main() {
   const commandExecResponse = await riza.command
-    .exec({ code: 'print("Hello world!")', language: 'PYTHON' })
+    .exec({ code: 'print("Hello world!")' })
     .catch(async (err) => {
       if (err instanceof Riza.APIError) {
         console.log(err.status); // 400
@@ -111,7 +111,7 @@ const riza = new Riza({
 });
 
 // Or, configure per-request:
-await riza.command.exec({ code: 'print("Hello world!")', language: 'PYTHON' }, {
+await riza.command.exec({ code: 'print("Hello world!")' }, {
   maxRetries: 5,
 });
 ```
@@ -128,7 +128,7 @@ const riza = new Riza({
 });
 
 // Override per-request:
-await riza.command.exec({ code: 'print("Hello world!")', language: 'PYTHON' }, {
+await riza.command.exec({ code: 'print("Hello world!")' }, {
   timeout: 5 * 1000,
 });
 ```
@@ -149,12 +149,12 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const riza = new Riza();
 
-const response = await riza.command.exec({ code: 'print("Hello world!")', language: 'PYTHON' }).asResponse();
+const response = await riza.command.exec({ code: 'print("Hello world!")' }).asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
 const { data: commandExecResponse, response: raw } = await riza.command
-  .exec({ code: 'print("Hello world!")', language: 'PYTHON' })
+  .exec({ code: 'print("Hello world!")' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(commandExecResponse.exit_code);
@@ -262,7 +262,7 @@ const riza = new Riza({
 
 // Override per-request:
 await riza.command.exec(
-  { code: 'print("Hello world!")', language: 'PYTHON' },
+  { code: 'print("Hello world!")' },
   {
     httpAgent: new http.Agent({ keepAlive: false }),
   },
@@ -286,14 +286,6 @@ We are keen for your feedback; please open an [issue](https://www.github.com/riz
 TypeScript >= 4.5 is supported.
 
 The following runtimes are supported:
-
-- Node.js 18 LTS or later ([non-EOL](https://endoflife.date/nodejs)) versions.
-- Deno v1.28.0 or higher, using `import Riza from "npm:@riza-io/api"`.
-- Bun 1.0 or later.
-- Cloudflare Workers.
-- Vercel Edge Runtime.
-- Jest 28 or greater with the `"node"` environment (`"jsdom"` is not supported at this time).
-- Nitro v2.6 or greater.
 
 Note that React Native is not supported at this time.
 

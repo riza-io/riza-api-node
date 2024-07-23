@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from '@riza-io/api/core';
 import { APIResource } from '@riza-io/api/resource';
+import * as Core from '@riza-io/api/core';
 import * as CommandAPI from '@riza-io/api/resources/command';
 
 export class Command extends APIResource {
@@ -40,11 +40,6 @@ export interface CommandExecParams {
   code: string;
 
   /**
-   * The interpreter to use when executing code.
-   */
-  language: 'PYTHON' | 'JAVASCRIPT' | 'TYPESCRIPT' | 'RUBY' | 'PHP';
-
-  /**
    * List of allowed hosts for HTTP requests
    */
   allow_http_hosts?: Array<string>;
@@ -58,6 +53,16 @@ export interface CommandExecParams {
    * Set of key-value pairs to add to the script's execution environment.
    */
   env?: Record<string, string>;
+
+  /**
+   * The interpreter to use when executing code.
+   */
+  language?: 'PYTHON' | 'JAVASCRIPT' | 'TYPESCRIPT' | 'RUBY' | 'PHP';
+
+  /**
+   * The runtime to use when executing code.
+   */
+  runtime?: string;
 
   /**
    * Input to pass to the script via `stdin`.
