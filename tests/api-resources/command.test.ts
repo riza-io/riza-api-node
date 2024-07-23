@@ -27,8 +27,8 @@ describe('resource command', () => {
       args: ['string', 'string', 'string'],
       env: { foo: 'string' },
       language: 'PYTHON',
-      runtime: 'string',
-      stdin: 'string',
+      runtime: 'runtime',
+      stdin: 'stdin',
     });
   });
 });
