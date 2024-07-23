@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '@riza-io/api/resource';
-import * as Core from '@riza-io/api/core';
-import * as CommandAPI from '@riza-io/api/resources/command';
+import { APIResource } from '../resource';
+import * as Core from '../core';
+import * as CommandAPI from './command';
 
 export class Command extends APIResource {
   /**

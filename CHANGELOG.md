@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-alpha.8 (2024-07-23)
+
+Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/riza-io/riza-api-node/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
+
+### Bug Fixes
+
+* use relative paths ([#28](https://github.com/riza-io/riza-api-node/issues/28)) ([e15394f](https://github.com/riza-io/riza-api-node/commit/e15394fd31d290bddf0acbdf5b244827f015d6e3))
+
+
+### Chores
+
+* **ci:** limit release doctor target branches ([#25](https://github.com/riza-io/riza-api-node/issues/25)) ([888dc11](https://github.com/riza-io/riza-api-node/commit/888dc11895d72501383c92748834e2a167bdc312))
+* **docs:** use client instead of package name in Node examples ([#23](https://github.com/riza-io/riza-api-node/issues/23)) ([b2dc48c](https://github.com/riza-io/riza-api-node/commit/b2dc48c1f8b74ce49673d5df80eff5036b7eefb1))
+* **internal:** refactor release doctor script ([#26](https://github.com/riza-io/riza-api-node/issues/26)) ([8a8c57f](https://github.com/riza-io/riza-api-node/commit/8a8c57fbe44a6180b5bbc0f4d10be6b6d2a84c25))
+* **tests:** update prism version ([#27](https://github.com/riza-io/riza-api-node/issues/27)) ([fc5d2b1](https://github.com/riza-io/riza-api-node/commit/fc5d2b1324dc078ecc9fca4a824f6fc7b958a236))
+
 ## 0.1.0-alpha.7 (2024-07-23)
 
 Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/riza-io/riza-api-node/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
