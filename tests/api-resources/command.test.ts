@@ -10,7 +10,7 @@ const riza = new Riza({
 
 describe('resource command', () => {
   test('exec: only required params', async () => {
-    const responsePromise = riza.command.exec({ code: 'print("Hello world!")', language: 'PYTHON' });
+    const responsePromise = riza.command.exec({ code: 'print("Hello world!")' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -23,10 +23,11 @@ describe('resource command', () => {
   test('exec: required and optional params', async () => {
     const response = await riza.command.exec({
       code: 'print("Hello world!")',
-      language: 'PYTHON',
       allow_http_hosts: ['string', 'string', 'string'],
       args: ['string', 'string', 'string'],
       env: { foo: 'string' },
+      language: 'PYTHON',
+      runtime: 'string',
       stdin: 'string',
     });
   });
