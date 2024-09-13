@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.1.0-alpha.8 (2024-09-13)
+
+Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/riza-io/riza-api-node/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
+
+### Features
+
+* **api:** OpenAPI spec update via Stainless API ([#29](https://github.com/riza-io/riza-api-node/issues/29)) ([8965ebc](https://github.com/riza-io/riza-api-node/commit/8965ebc89180ecc896d6af95fdbf8f47d3448038))
+
+
+### Bug Fixes
+
+* **errors:** pass message through to APIConnectionError ([#31](https://github.com/riza-io/riza-api-node/issues/31)) ([9bb9446](https://github.com/riza-io/riza-api-node/commit/9bb944629e7565e59c0abe6e092b6227e266f7a7))
+* use relative paths ([#28](https://github.com/riza-io/riza-api-node/issues/28)) ([e15394f](https://github.com/riza-io/riza-api-node/commit/e15394fd31d290bddf0acbdf5b244827f015d6e3))
+
+
+### Chores
+
+* better object fallback behaviour for casting errors ([#32](https://github.com/riza-io/riza-api-node/issues/32)) ([9317296](https://github.com/riza-io/riza-api-node/commit/93172964ae4bcbe5b48724a08171b407ad675e32))
+* **ci:** limit release doctor target branches ([#25](https://github.com/riza-io/riza-api-node/issues/25)) ([888dc11](https://github.com/riza-io/riza-api-node/commit/888dc11895d72501383c92748834e2a167bdc312))
+* **docs:** use client instead of package name in Node examples ([#23](https://github.com/riza-io/riza-api-node/issues/23)) ([b2dc48c](https://github.com/riza-io/riza-api-node/commit/b2dc48c1f8b74ce49673d5df80eff5036b7eefb1))
+* **internal:** codegen related update ([#30](https://github.com/riza-io/riza-api-node/issues/30)) ([d92b6ce](https://github.com/riza-io/riza-api-node/commit/d92b6ceb3915f229f3b0f8a7ebe9e1fc01d2f735))
+* **internal:** codegen related update ([#33](https://github.com/riza-io/riza-api-node/issues/33)) ([bf4398d](https://github.com/riza-io/riza-api-node/commit/bf4398d53d01abfb81e96164c9e045fa6d2b089c))
+* **internal:** refactor release doctor script ([#26](https://github.com/riza-io/riza-api-node/issues/26)) ([8a8c57f](https://github.com/riza-io/riza-api-node/commit/8a8c57fbe44a6180b5bbc0f4d10be6b6d2a84c25))
+* **tests:** update prism version ([#27](https://github.com/riza-io/riza-api-node/issues/27)) ([fc5d2b1](https://github.com/riza-io/riza-api-node/commit/fc5d2b1324dc078ecc9fca4a824f6fc7b958a236))
+
+
+### Documentation
+
+* update CONTRIBUTING.md ([#34](https://github.com/riza-io/riza-api-node/issues/34)) ([f2852b0](https://github.com/riza-io/riza-api-node/commit/f2852b04e975560677381345c0c0daae728cabba))
+
 ## 0.1.0-alpha.7 (2024-07-23)
 
 Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/riza-io/riza-api-node/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
