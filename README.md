@@ -27,9 +27,9 @@ const client = new Riza({
 });
 
 async function main() {
-  const commandExecResponse = await client.command.exec({ code: 'print("Hello world!")' });
+  const response = await client.command.exec({ code: 'print("Hello world!")' });
 
-  console.log(commandExecResponse.exit_code);
+  console.log(response.exit_code);
 }
 
 main();
@@ -49,7 +49,7 @@ const client = new Riza({
 
 async function main() {
   const params: Riza.CommandExecParams = { code: 'print("Hello world!")' };
-  const commandExecResponse: Riza.CommandExecResponse = await client.command.exec(params);
+  const response: Riza.CommandExecResponse = await client.command.exec(params);
 }
 
 main();
@@ -66,17 +66,15 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const commandExecResponse = await client.command
-    .exec({ code: 'print("Hello world!")' })
-    .catch(async (err) => {
-      if (err instanceof Riza.APIError) {
-        console.log(err.status); // 400
-        console.log(err.name); // BadRequestError
-        console.log(err.headers); // {server: 'nginx', ...}
-      } else {
-        throw err;
-      }
-    });
+  const response = await client.command.exec({ code: 'print("Hello world!")' }).catch(async (err) => {
+    if (err instanceof Riza.APIError) {
+      console.log(err.status); // 400
+      console.log(err.name); // BadRequestError
+      console.log(err.headers); // {server: 'nginx', ...}
+    } else {
+      throw err;
+    }
+  });
 }
 
 main();
@@ -153,11 +151,11 @@ const response = await client.command.exec({ code: 'print("Hello world!")' }).as
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: commandExecResponse, response: raw } = await client.command
+const { data: response, response: raw } = await client.command
   .exec({ code: 'print("Hello world!")' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(commandExecResponse.exit_code);
+console.log(response.exit_code);
 ```
 
 ### Making custom/undocumented requests
