@@ -3,8 +3,8 @@
 import * as Errors from './error';
 import * as Uploads from './uploads';
 import { type Agent } from './_shims/index';
-import * as Core from '@riza-io/api/core';
-import * as API from '@riza-io/api/resources/index';
+import * as Core from './core';
+import * as API from './resources/index';
 
 export interface ClientOptions {
   /**
@@ -137,6 +137,7 @@ export class Riza extends Core.APIClient {
   }
 
   static Riza = this;
+  static DEFAULT_TIMEOUT = 60000; // 1 minute
 
   static RizaError = Errors.RizaError;
   static APIError = Errors.APIError;
