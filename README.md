@@ -27,9 +27,12 @@ const client = new Riza({
 });
 
 async function main() {
-  const response = await client.command.exec({ code: 'print("Hello world!")' });
+  const response = await client.command.exec({
+    language: "PYTHON",
+    code: "print('Hello, world!')",
+  });
 
-  console.log(response.exit_code);
+  console.log(response.stdout);
 }
 
 main();
