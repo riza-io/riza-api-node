@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.11 (2024-10-08)
+
+Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/riza-io/riza-api-node/compare/v0.1.0-alpha.10...v0.1.0-alpha.11)
+
+### Chores
+
+* **internal:** pass props through internal parser ([#44](https://github.com/riza-io/riza-api-node/issues/44)) ([b9b1d67](https://github.com/riza-io/riza-api-node/commit/b9b1d674a96c297cf8f40a1f442023b0c97c8739))
+
 ## 0.1.0-alpha.10 (2024-10-08)
 
 Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/riza-io/riza-api-node/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
