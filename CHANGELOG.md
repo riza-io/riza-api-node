@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.10 (2024-10-08)
+
+Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/riza-io/riza-api-node/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
+
+### Chores
+
+* **internal:** codegen related update ([#41](https://github.com/riza-io/riza-api-node/issues/41)) ([6044c7d](https://github.com/riza-io/riza-api-node/commit/6044c7d6ef7f8df96f3c6ca2cd5ffe8024c0215f))
+
 ## 0.1.0-alpha.9 (2024-09-18)
 
 Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/riza-io/riza-api-node/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
