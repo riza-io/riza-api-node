@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.9 (2024-09-18)
+
+Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/riza-io/riza-api-node/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
+
+### Bug Fixes
+
+* **types:** remove leftover polyfill usage ([#38](https://github.com/riza-io/riza-api-node/issues/38)) ([8bdd29e](https://github.com/riza-io/riza-api-node/commit/8bdd29e65f1fd81e953a34dab14793fd88f45325))
+
+
+### Chores
+
+* **internal:** add dev dependency ([#36](https://github.com/riza-io/riza-api-node/issues/36)) ([e42cce5](https://github.com/riza-io/riza-api-node/commit/e42cce5e3f44b2469f80aaa01aa56974f4142a34))
+
 ## 0.1.0-alpha.8 (2024-09-13)
 
 Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/riza-io/riza-api-node/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
