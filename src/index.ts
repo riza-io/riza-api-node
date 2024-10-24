@@ -119,6 +119,8 @@ export class Riza extends Core.APIClient {
     this.apiKey = apiKey;
   }
 
+  secrets: API.Secrets = new API.Secrets(this);
+  tools: API.Tools = new API.Tools(this);
   command: API.Command = new API.Command(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
@@ -178,6 +180,18 @@ export import fileFromPath = Uploads.fileFromPath;
 
 export namespace Riza {
   export import RequestOptions = Core.RequestOptions;
+
+  export import Secrets = API.Secrets;
+  export import Secret = API.Secret;
+  export import SecretListResponse = API.SecretListResponse;
+
+  export import Tools = API.Tools;
+  export import Tool = API.Tool;
+  export import ToolListResponse = API.ToolListResponse;
+  export import ToolExecResponse = API.ToolExecResponse;
+  export import ToolCreateParams = API.ToolCreateParams;
+  export import ToolUpdateParams = API.ToolUpdateParams;
+  export import ToolExecParams = API.ToolExecParams;
 
   export import Command = API.Command;
   export import CommandExecResponse = API.CommandExecResponse;
