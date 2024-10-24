@@ -17,18 +17,18 @@ export class Command extends APIResource {
 
 export interface CommandExecResponse {
   /**
-   * The exit code returned by the script. Will often be `0` on success and non-zero
+   * The exit code returned by the script. Will often be '0' on success and non-zero
    * on failure.
    */
   exit_code?: number;
 
   /**
-   * The contents of `stderr` after executing the script.
+   * The contents of 'stderr' after executing the script.
    */
   stderr?: string;
 
   /**
-   * The contents of `stdout` after executing the script.
+   * The contents of 'stdout' after executing the script.
    */
   stdout?: string;
 }
@@ -62,7 +62,7 @@ export interface CommandExecParams {
   /**
    * Configuration for HTTP requests and authentication.
    */
-  http?: CommandExecParams.HTTP;
+  http?: CommandExecParams.HTTP | null;
 
   /**
    * The interpreter to use when executing code.
@@ -72,7 +72,9 @@ export interface CommandExecParams {
   /**
    * Configuration for execution environment limits.
    */
-  limits?: CommandExecParams.Limits;
+  limits?: CommandExecParams.Limits | null;
+
+  revision?: string;
 
   /**
    * The runtime to use when executing code.
@@ -80,7 +82,7 @@ export interface CommandExecParams {
   runtime?: string;
 
   /**
-   * Input made available to the script via `stdin`.
+   * Input made available to the script via 'stdin'.
    */
   stdin?: string;
 }
@@ -90,7 +92,7 @@ export namespace CommandExecParams {
     /**
      * The contents of the file.
      */
-    content?: string;
+    contents?: string;
 
     /**
      * The relative path of the file.
@@ -109,16 +111,16 @@ export namespace CommandExecParams {
   }
 
   export namespace HTTP {
+    /**
+     * List of allowed HTTP hosts and associated authentication.
+     */
     export interface Allow {
       /**
        * Authentication configuration for outbound requests to this host.
        */
       auth?: Allow.Auth;
 
-      /**
-       * The hostname to allow.
-       */
-      host?: string;
+      'host desc:'?: string;
     }
 
     export namespace Allow {
@@ -126,19 +128,27 @@ export namespace CommandExecParams {
        * Authentication configuration for outbound requests to this host.
        */
       export interface Auth {
+        basic?: Auth.Basic | null;
+
         /**
-         * Configuration to add an `Authorization` header using the `Bearer` scheme.
+         * Configuration to add an 'Authorization' header using the 'Bearer' scheme.
          */
-        bearer?: Auth.Bearer;
+        bearer?: Auth.Bearer | null;
       }
 
       export namespace Auth {
+        export interface Basic {
+          password?: string;
+
+          user_id?: string;
+        }
+
         /**
-         * Configuration to add an `Authorization` header using the `Bearer` scheme.
+         * Configuration to add an 'Authorization' header using the 'Bearer' scheme.
          */
         export interface Bearer {
           /**
-           * The token to set, e.g. `Authorization: Bearer <token>`.
+           * The token to set, e.g. 'Authorization: Bearer <token>'.
            */
           token?: string;
         }
