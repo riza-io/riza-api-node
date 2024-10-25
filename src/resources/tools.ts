@@ -120,7 +120,10 @@ export namespace ToolExecParams {
        */
       auth?: Allow.Auth;
 
-      'host desc:'?: string;
+      /**
+       * The hostname to allow.
+       */
+      host?: string;
     }
 
     export namespace Allow {
