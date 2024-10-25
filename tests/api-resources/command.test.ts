@@ -35,15 +35,15 @@ describe('resource command', () => {
         allow: [
           {
             auth: { basic: { password: 'password', user_id: 'user_id' }, bearer: { token: 'token' } },
-            'host desc:': 'host desc:',
+            host: 'host',
           },
           {
             auth: { basic: { password: 'password', user_id: 'user_id' }, bearer: { token: 'token' } },
-            'host desc:': 'host desc:',
+            host: 'host',
           },
           {
             auth: { basic: { password: 'password', user_id: 'user_id' }, bearer: { token: 'token' } },
-            'host desc:': 'host desc:',
+            host: 'host',
           },
         ],
       },

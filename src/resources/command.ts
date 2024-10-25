@@ -120,7 +120,10 @@ export namespace CommandExecParams {
        */
       auth?: Allow.Auth;
 
-      'host desc:'?: string;
+      /**
+       * The hostname to allow.
+       */
+      host?: string;
     }
 
     export namespace Allow {
