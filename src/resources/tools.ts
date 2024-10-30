@@ -137,6 +137,8 @@ export namespace ToolExecParams {
          * Configuration to add an 'Authorization' header using the 'Bearer' scheme.
          */
         bearer?: Auth.Bearer | null;
+
+        query?: Auth.Query | null;
       }
 
       export namespace Auth {
@@ -158,6 +160,14 @@ export namespace ToolExecParams {
           token?: string;
 
           secret_id?: string;
+        }
+
+        export interface Query {
+          key?: string;
+
+          secret_id?: string;
+
+          value?: string;
         }
       }
     }

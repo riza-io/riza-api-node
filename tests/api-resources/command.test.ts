@@ -34,15 +34,27 @@ describe('resource command', () => {
       http: {
         allow: [
           {
-            auth: { basic: { password: 'password', user_id: 'user_id' }, bearer: { token: 'token' } },
+            auth: {
+              basic: { password: 'password', user_id: 'user_id' },
+              bearer: { token: 'token' },
+              query: { key: 'key', value: 'value' },
+            },
             host: 'host',
           },
           {
-            auth: { basic: { password: 'password', user_id: 'user_id' }, bearer: { token: 'token' } },
+            auth: {
+              basic: { password: 'password', user_id: 'user_id' },
+              bearer: { token: 'token' },
+              query: { key: 'key', value: 'value' },
+            },
             host: 'host',
           },
           {
-            auth: { basic: { password: 'password', user_id: 'user_id' }, bearer: { token: 'token' } },
+            auth: {
+              basic: { password: 'password', user_id: 'user_id' },
+              bearer: { token: 'token' },
+              query: { key: 'key', value: 'value' },
+            },
             host: 'host',
           },
         ],
