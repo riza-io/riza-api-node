@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as SecretsAPI from './secrets';
 
 export class Secrets extends APIResource {
   list(options?: Core.RequestOptions): Core.APIPromise<SecretListResponse> {
@@ -20,7 +19,6 @@ export interface SecretListResponse {
   secrets: Array<Secret>;
 }
 
-export namespace Secrets {
-  export import Secret = SecretsAPI.Secret;
-  export import SecretListResponse = SecretsAPI.SecretListResponse;
+export declare namespace Secrets {
+  export { type Secret as Secret, type SecretListResponse as SecretListResponse };
 }

@@ -11,7 +11,7 @@
     "paths": {
       "@riza-io/api/_shims/auto/*": ["src/_shims/auto/*-node"],
       "@riza-io/api/*": ["src/*"],
-      "@riza-io/api": ["src/index.ts"],
+      "@riza-io/api": ["src/index.ts"]
     },
     "noEmit": true,
 
