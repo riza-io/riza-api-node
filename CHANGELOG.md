@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.1.0-alpha.11 (2024-10-30)
+
+Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/riza-io/riza-api-node/compare/v0.1.0-alpha.10...v0.1.0-alpha.11)
+
+### Features
+
+* **api:** api update ([#46](https://github.com/riza-io/riza-api-node/issues/46)) ([81ef38c](https://github.com/riza-io/riza-api-node/commit/81ef38ca5867a2877dd061ca3a30a02950910f6a))
+* **api:** api update ([#47](https://github.com/riza-io/riza-api-node/issues/47)) ([37ce229](https://github.com/riza-io/riza-api-node/commit/37ce2298345c8647002f57cd2ffbc6f9b7b6bbb7))
+* **api:** api update ([#49](https://github.com/riza-io/riza-api-node/issues/49)) ([0cf5937](https://github.com/riza-io/riza-api-node/commit/0cf5937deb060a40ea81f3bbe01e68d8c0975f52))
+* **api:** api update ([#50](https://github.com/riza-io/riza-api-node/issues/50)) ([bff1611](https://github.com/riza-io/riza-api-node/commit/bff16110e079a1f2854b75fb51d67f0159f919e3))
+* **api:** manual updates ([#48](https://github.com/riza-io/riza-api-node/issues/48)) ([3d97170](https://github.com/riza-io/riza-api-node/commit/3d97170b52452f092142646463b24884f2418be3))
+
+
+### Chores
+
+* **internal:** pass props through internal parser ([#44](https://github.com/riza-io/riza-api-node/issues/44)) ([b9b1d67](https://github.com/riza-io/riza-api-node/commit/b9b1d674a96c297cf8f40a1f442023b0c97c8739))
+
 ## 0.1.0-alpha.10 (2024-10-08)
 
 Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/riza-io/riza-api-node/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)

@@ -27,19 +27,41 @@ describe('resource command', () => {
       args: ['string', 'string', 'string'],
       env: { foo: 'string' },
       files: [
-        { content: 'content', path: 'path' },
-        { content: 'content', path: 'path' },
-        { content: 'content', path: 'path' },
+        { contents: 'contents', path: 'path' },
+        { contents: 'contents', path: 'path' },
+        { contents: 'contents', path: 'path' },
       ],
       http: {
         allow: [
-          { auth: { bearer: { token: 'token' } }, host: 'host' },
-          { auth: { bearer: { token: 'token' } }, host: 'host' },
-          { auth: { bearer: { token: 'token' } }, host: 'host' },
+          {
+            auth: {
+              basic: { password: 'password', user_id: 'user_id' },
+              bearer: { token: 'token' },
+              query: { key: 'key', value: 'value' },
+            },
+            host: 'host',
+          },
+          {
+            auth: {
+              basic: { password: 'password', user_id: 'user_id' },
+              bearer: { token: 'token' },
+              query: { key: 'key', value: 'value' },
+            },
+            host: 'host',
+          },
+          {
+            auth: {
+              basic: { password: 'password', user_id: 'user_id' },
+              bearer: { token: 'token' },
+              query: { key: 'key', value: 'value' },
+            },
+            host: 'host',
+          },
         ],
       },
       language: 'PYTHON',
       limits: { execution_timeout: 0, memory_size: 0 },
+      revision: 'revision',
       runtime: 'runtime',
       stdin: 'stdin',
     });
