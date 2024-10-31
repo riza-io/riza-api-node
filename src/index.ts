@@ -1,10 +1,21 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Errors from './error';
-import * as Uploads from './uploads';
 import { type Agent } from './_shims/index';
 import * as Core from './core';
+import * as Errors from './error';
+import * as Uploads from './uploads';
 import * as API from './resources/index';
+import { Command, CommandExecParams, CommandExecResponse } from './resources/command';
+import { Secret, SecretListResponse, Secrets } from './resources/secrets';
+import {
+  Tool,
+  ToolCreateParams,
+  ToolExecParams,
+  ToolExecResponse,
+  ToolListResponse,
+  ToolUpdateParams,
+  Tools,
+} from './resources/tools';
 
 export interface ClientOptions {
   /**
@@ -159,43 +170,47 @@ export class Riza extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-export const {
-  RizaError,
-  APIError,
-  APIConnectionError,
-  APIConnectionTimeoutError,
-  APIUserAbortError,
-  NotFoundError,
-  ConflictError,
-  RateLimitError,
-  BadRequestError,
-  AuthenticationError,
-  InternalServerError,
-  PermissionDeniedError,
-  UnprocessableEntityError,
-} = Errors;
+export const RizaError = Errors.RizaError;
+export const APIError = Errors.APIError;
+export const APIConnectionError = Errors.APIConnectionError;
+export const APIConnectionTimeoutError = Errors.APIConnectionTimeoutError;
+export const APIUserAbortError = Errors.APIUserAbortError;
+export const NotFoundError = Errors.NotFoundError;
+export const ConflictError = Errors.ConflictError;
+export const RateLimitError = Errors.RateLimitError;
+export const BadRequestError = Errors.BadRequestError;
+export const AuthenticationError = Errors.AuthenticationError;
+export const InternalServerError = Errors.InternalServerError;
+export const PermissionDeniedError = Errors.PermissionDeniedError;
+export const UnprocessableEntityError = Errors.UnprocessableEntityError;
 
 export import toFile = Uploads.toFile;
 export import fileFromPath = Uploads.fileFromPath;
 
-export namespace Riza {
-  export import RequestOptions = Core.RequestOptions;
+Riza.Secrets = Secrets;
+Riza.Tools = Tools;
+Riza.Command = Command;
 
-  export import Secrets = API.Secrets;
-  export import Secret = API.Secret;
-  export import SecretListResponse = API.SecretListResponse;
+export declare namespace Riza {
+  export type RequestOptions = Core.RequestOptions;
 
-  export import Tools = API.Tools;
-  export import Tool = API.Tool;
-  export import ToolListResponse = API.ToolListResponse;
-  export import ToolExecResponse = API.ToolExecResponse;
-  export import ToolCreateParams = API.ToolCreateParams;
-  export import ToolUpdateParams = API.ToolUpdateParams;
-  export import ToolExecParams = API.ToolExecParams;
+  export { Secrets as Secrets, type Secret as Secret, type SecretListResponse as SecretListResponse };
 
-  export import Command = API.Command;
-  export import CommandExecResponse = API.CommandExecResponse;
-  export import CommandExecParams = API.CommandExecParams;
+  export {
+    Tools as Tools,
+    type Tool as Tool,
+    type ToolListResponse as ToolListResponse,
+    type ToolExecResponse as ToolExecResponse,
+    type ToolCreateParams as ToolCreateParams,
+    type ToolUpdateParams as ToolUpdateParams,
+    type ToolExecParams as ToolExecParams,
+  };
+
+  export {
+    Command as Command,
+    type CommandExecResponse as CommandExecResponse,
+    type CommandExecParams as CommandExecParams,
+  };
 }
 
 export default Riza;
