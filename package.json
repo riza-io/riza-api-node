@@ -1,6 +1,6 @@
 {
   "name": "@riza-io/api",
-  "version": "0.1.0-alpha.10",
+  "version": "0.1.0-alpha.11",
   "description": "The official TypeScript library for the Riza API",
   "author": "Riza <hello@riza.io>",
   "types": "dist/index.d.ts",
