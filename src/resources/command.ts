@@ -2,7 +2,6 @@
 
 import { APIResource } from '../resource';
 import * as Core from '../core';
-import * as CommandAPI from './command';
 
 export class Command extends APIResource {
   /**
@@ -183,7 +182,6 @@ export namespace CommandExecParams {
   }
 }
 
-export namespace Command {
-  export import CommandExecResponse = CommandAPI.CommandExecResponse;
-  export import CommandExecParams = CommandAPI.CommandExecParams;
+export declare namespace Command {
+  export { type CommandExecResponse as CommandExecResponse, type CommandExecParams as CommandExecParams };
 }
