@@ -40,7 +40,7 @@ export interface Tool {
 }
 
 export interface ToolListResponse {
-  tools?: Array<Tool>;
+  tools: Array<Tool>;
 }
 
 export interface ToolExecResponse {
