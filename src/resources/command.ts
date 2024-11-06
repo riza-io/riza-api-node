@@ -137,6 +137,8 @@ export namespace CommandExecParams {
          */
         bearer?: Auth.Bearer | null;
 
+        header?: Auth.Header | null;
+
         query?: Auth.Query | null;
       }
 
@@ -155,6 +157,12 @@ export namespace CommandExecParams {
            * The token to set, e.g. 'Authorization: Bearer <token>'.
            */
           token?: string;
+        }
+
+        export interface Header {
+          name?: string;
+
+          value?: string;
         }
 
         export interface Query {
