@@ -37,6 +37,7 @@ describe('resource command', () => {
             auth: {
               basic: { password: 'password', user_id: 'user_id' },
               bearer: { token: 'token' },
+              header: { name: 'name', value: 'value' },
               query: { key: 'key', value: 'value' },
             },
             host: 'host',
@@ -45,6 +46,7 @@ describe('resource command', () => {
             auth: {
               basic: { password: 'password', user_id: 'user_id' },
               bearer: { token: 'token' },
+              header: { name: 'name', value: 'value' },
               query: { key: 'key', value: 'value' },
             },
             host: 'host',
@@ -53,6 +55,7 @@ describe('resource command', () => {
             auth: {
               basic: { password: 'password', user_id: 'user_id' },
               bearer: { token: 'token' },
+              header: { name: 'name', value: 'value' },
               query: { key: 'key', value: 'value' },
             },
             host: 'host',
