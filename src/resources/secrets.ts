@@ -4,6 +4,9 @@ import { APIResource } from '../resource';
 import * as Core from '../core';
 
 export class Secrets extends APIResource {
+  /**
+   * Returns a list of secrets in your project.
+   */
   list(options?: Core.RequestOptions): Core.APIPromise<SecretListResponse> {
     return this._client.get('/v1/secrets', options);
   }
