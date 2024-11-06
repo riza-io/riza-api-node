@@ -4,22 +4,38 @@ import { APIResource } from '../resource';
 import * as Core from '../core';
 
 export class Tools extends APIResource {
+  /**
+   * Create a tool in your project.
+   */
   create(body: ToolCreateParams, options?: Core.RequestOptions): Core.APIPromise<Tool> {
     return this._client.post('/v1/tools', { body, ...options });
   }
 
+  /**
+   * Update the source code and input schema of a tool.
+   */
   update(id: string, body: ToolUpdateParams, options?: Core.RequestOptions): Core.APIPromise<Tool> {
     return this._client.post(`/v1/tools/${id}`, { body, ...options });
   }
 
+  /**
+   * Returns a list of tools in your project.
+   */
   list(options?: Core.RequestOptions): Core.APIPromise<ToolListResponse> {
     return this._client.get('/v1/tools', options);
   }
 
+  /**
+   * Execute a tool with a given input. The input is validated against the tool's
+   * input schema.
+   */
   exec(id: string, body: ToolExecParams, options?: Core.RequestOptions): Core.APIPromise<ToolExecResponse> {
     return this._client.post(`/v1/tools/${id}/execute`, { body, ...options });
   }
 
+  /**
+   * Retrieves a tool.
+   */
   get(id: string, options?: Core.RequestOptions): Core.APIPromise<Tool> {
     return this._client.get(`/v1/tools/${id}`, options);
   }
