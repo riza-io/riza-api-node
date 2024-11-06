@@ -5,6 +5,13 @@ import * as Core from '../core';
 
 export class Secrets extends APIResource {
   /**
+   * Create a secret in your project.
+   */
+  create(body: SecretCreateParams, options?: Core.RequestOptions): Core.APIPromise<Secret> {
+    return this._client.post('/v1/secrets', { body, ...options });
+  }
+
+  /**
    * Returns a list of secrets in your project.
    */
   list(options?: Core.RequestOptions): Core.APIPromise<SecretListResponse> {
@@ -22,6 +29,16 @@ export interface SecretListResponse {
   secrets: Array<Secret>;
 }
 
+export interface SecretCreateParams {
+  name: string;
+
+  value: string;
+}
+
 export declare namespace Secrets {
-  export { type Secret as Secret, type SecretListResponse as SecretListResponse };
+  export {
+    type Secret as Secret,
+    type SecretListResponse as SecretListResponse,
+    type SecretCreateParams as SecretCreateParams,
+  };
 }

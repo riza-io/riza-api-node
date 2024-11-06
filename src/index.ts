@@ -6,7 +6,7 @@ import * as Errors from './error';
 import * as Uploads from './uploads';
 import * as API from './resources/index';
 import { Command, CommandExecParams, CommandExecResponse } from './resources/command';
-import { Secret, SecretListResponse, Secrets } from './resources/secrets';
+import { Secret, SecretCreateParams, SecretListResponse, Secrets } from './resources/secrets';
 import {
   Tool,
   ToolCreateParams,
@@ -196,7 +196,12 @@ Riza.Command = Command;
 export declare namespace Riza {
   export type RequestOptions = Core.RequestOptions;
 
-  export { Secrets as Secrets, type Secret as Secret, type SecretListResponse as SecretListResponse };
+  export {
+    Secrets as Secrets,
+    type Secret as Secret,
+    type SecretListResponse as SecretListResponse,
+    type SecretCreateParams as SecretCreateParams,
+  };
 
   export {
     Tools as Tools,
