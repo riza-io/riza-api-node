@@ -34,6 +34,8 @@ export interface Tool {
 
   input_schema: unknown;
 
+  language: 'PYTHON' | 'JAVASCRIPT' | 'TYPESCRIPT' | 'RUBY' | 'PHP';
+
   name: string;
 
   revision_id: string;
