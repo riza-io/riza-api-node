@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.1 (2024-11-07)
+
+Full Changelog: [v0.1.0-alpha.11...v0.1.1](https://github.com/riza-io/riza-api-node/compare/v0.1.0-alpha.11...v0.1.1)
+
+### Features
+
+* **api:** api update ([#54](https://github.com/riza-io/riza-api-node/issues/54)) ([fab6e7c](https://github.com/riza-io/riza-api-node/commit/fab6e7c330900e29d7d024187bdb452d69300c68))
+* **api:** api update ([#56](https://github.com/riza-io/riza-api-node/issues/56)) ([6bf9814](https://github.com/riza-io/riza-api-node/commit/6bf98145e5f0f66868022b3cf60ee70a01a85e45))
+* **api:** api update ([#57](https://github.com/riza-io/riza-api-node/issues/57)) ([a932ca9](https://github.com/riza-io/riza-api-node/commit/a932ca9e6a39a1363d0e163a643d66187b1b17c2))
+* **api:** api update ([#58](https://github.com/riza-io/riza-api-node/issues/58)) ([3d9b205](https://github.com/riza-io/riza-api-node/commit/3d9b205defc86a1ae869a579dd4365e9ae96815c))
+* **api:** manual updates ([#59](https://github.com/riza-io/riza-api-node/issues/59)) ([aa72b1c](https://github.com/riza-io/riza-api-node/commit/aa72b1c4805691ca8ea6d5cd2b9e2c9a777995bb))
+
+
+### Chores
+
+* **internal:** version bump ([#51](https://github.com/riza-io/riza-api-node/issues/51)) ([fb63ac1](https://github.com/riza-io/riza-api-node/commit/fb63ac1f61cfadd25df5d0ee4f5704a303fd247c))
+* rebuild project due to codegen change ([#53](https://github.com/riza-io/riza-api-node/issues/53)) ([f40beb1](https://github.com/riza-io/riza-api-node/commit/f40beb12deba8ad6a483e5794c9927c40785cbcd))
+
 ## 0.1.0-alpha.11 (2024-10-30)
 
 Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/riza-io/riza-api-node/compare/v0.1.0-alpha.10...v0.1.0-alpha.11)
