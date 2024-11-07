@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 (2024-11-07)
+
+Full Changelog: [v0.1.1...v0.2.0](https://github.com/riza-io/riza-api-node/compare/v0.1.1...v0.2.0)
+
+### Features
+
+* **api:** api update ([#61](https://github.com/riza-io/riza-api-node/issues/61)) ([40c6ac4](https://github.com/riza-io/riza-api-node/commit/40c6ac4f75f0a35cd4ac1d0e29cb8e1f949ad48b))
+
 ## 0.1.1 (2024-11-07)
 
 Full Changelog: [v0.1.0-alpha.11...v0.1.1](https://github.com/riza-io/riza-api-node/compare/v0.1.0-alpha.11...v0.1.1)
