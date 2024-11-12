@@ -64,7 +64,7 @@ export interface ToolListResponse {
 export interface ToolExecResponse {
   execution: ToolExecResponse.Execution;
 
-  output?: string;
+  output?: unknown;
 }
 
 export namespace ToolExecResponse {
