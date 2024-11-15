@@ -200,7 +200,7 @@ export declare namespace Riza {
   };
 }
 
-export { toFile, fileFromPath } from '@riza-io/api/uploads';
+export { toFile, fileFromPath } from './uploads';
 export {
   RizaError,
   APIError,
@@ -215,6 +215,6 @@ export {
   InternalServerError,
   PermissionDeniedError,
   UnprocessableEntityError,
-} from '@riza-io/api/error';
+} from './error';
 
 export default Riza;
