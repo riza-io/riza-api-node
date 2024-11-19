@@ -23,34 +23,12 @@ describe('resource command', () => {
   test('exec: required and optional params', async () => {
     const response = await client.command.exec({
       code: 'print("Hello world!")',
-      allow_http_hosts: ['string', 'string', 'string'],
-      args: ['string', 'string', 'string'],
+      allow_http_hosts: ['string'],
+      args: ['string'],
       env: { foo: 'string' },
-      files: [
-        { contents: 'contents', path: 'path' },
-        { contents: 'contents', path: 'path' },
-        { contents: 'contents', path: 'path' },
-      ],
+      files: [{ contents: 'contents', path: 'path' }],
       http: {
         allow: [
-          {
-            auth: {
-              basic: { password: 'password', user_id: 'user_id' },
-              bearer: { token: 'token' },
-              header: { name: 'name', value: 'value' },
-              query: { key: 'key', value: 'value' },
-            },
-            host: 'host',
-          },
-          {
-            auth: {
-              basic: { password: 'password', user_id: 'user_id' },
-              bearer: { token: 'token' },
-              header: { name: 'name', value: 'value' },
-              query: { key: 'key', value: 'value' },
-            },
-            host: 'host',
-          },
           {
             auth: {
               basic: { password: 'password', user_id: 'user_id' },
