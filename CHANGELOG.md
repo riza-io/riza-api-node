@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.3.0 (2024-12-02)
+
+Full Changelog: [v0.2.0...v0.3.0](https://github.com/riza-io/riza-api-node/compare/v0.2.0...v0.3.0)
+
+### Features
+
+* **api:** api update ([#66](https://github.com/riza-io/riza-api-node/issues/66)) ([8b9ea4e](https://github.com/riza-io/riza-api-node/commit/8b9ea4e5cc6d7c77fdfb0d3a678952679e8d5ecf))
+* **api:** api update ([#73](https://github.com/riza-io/riza-api-node/issues/73)) ([0233f64](https://github.com/riza-io/riza-api-node/commit/0233f64ee49306a2db9e1f1d2660e61bb799095a))
+* **internal:** make git install file structure match npm ([#72](https://github.com/riza-io/riza-api-node/issues/72)) ([1bc5c1f](https://github.com/riza-io/riza-api-node/commit/1bc5c1f27b83966b79b92f814b5bd545cf31e155))
+
+
+### Chores
+
+* rebuild project due to codegen change ([#64](https://github.com/riza-io/riza-api-node/issues/64)) ([1ee15f3](https://github.com/riza-io/riza-api-node/commit/1ee15f381194a5efe0a12aa64222e420b022f310))
+* rebuild project due to codegen change ([#67](https://github.com/riza-io/riza-api-node/issues/67)) ([53df425](https://github.com/riza-io/riza-api-node/commit/53df425c5080662e12ced02e5cade5f992efeb1e))
+* rebuild project due to codegen change ([#68](https://github.com/riza-io/riza-api-node/issues/68)) ([b0df832](https://github.com/riza-io/riza-api-node/commit/b0df8329029174670c8d38294444c25e60d74fbd))
+* rebuild project due to codegen change ([#69](https://github.com/riza-io/riza-api-node/issues/69)) ([921638c](https://github.com/riza-io/riza-api-node/commit/921638c9629f5bf7dc7f08fef9debaa8a53793ce))
+* remove redundant word in comment ([#71](https://github.com/riza-io/riza-api-node/issues/71)) ([9965611](https://github.com/riza-io/riza-api-node/commit/9965611583ecb1d7df5ac19063f6039c47712a23))
+
+
+### Documentation
+
+* remove suggestion to use `npm` call out ([#70](https://github.com/riza-io/riza-api-node/issues/70)) ([30808da](https://github.com/riza-io/riza-api-node/commit/30808da56c5ffd2b75319cc2ea21652ad4df6ad5))
+
 ## 0.2.0 (2024-11-07)
 
 Full Changelog: [v0.1.1...v0.2.0](https://github.com/riza-io/riza-api-node/compare/v0.1.1...v0.2.0)
