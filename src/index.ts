@@ -170,29 +170,9 @@ export class Riza extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-export {
-  RizaError,
-  APIError,
-  APIConnectionError,
-  APIConnectionTimeoutError,
-  APIUserAbortError,
-  NotFoundError,
-  ConflictError,
-  RateLimitError,
-  BadRequestError,
-  AuthenticationError,
-  InternalServerError,
-  PermissionDeniedError,
-  UnprocessableEntityError,
-} from './error';
-
-export import toFile = Uploads.toFile;
-export import fileFromPath = Uploads.fileFromPath;
-
 Riza.Secrets = Secrets;
 Riza.Tools = Tools;
 Riza.Command = Command;
-
 export declare namespace Riza {
   export type RequestOptions = Core.RequestOptions;
 
@@ -219,5 +199,22 @@ export declare namespace Riza {
     type CommandExecParams as CommandExecParams,
   };
 }
+
+export { toFile, fileFromPath } from './uploads';
+export {
+  RizaError,
+  APIError,
+  APIConnectionError,
+  APIConnectionTimeoutError,
+  APIUserAbortError,
+  NotFoundError,
+  ConflictError,
+  RateLimitError,
+  BadRequestError,
+  AuthenticationError,
+  InternalServerError,
+  PermissionDeniedError,
+  UnprocessableEntityError,
+} from './error';
 
 export default Riza;
