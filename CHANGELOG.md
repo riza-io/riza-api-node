@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.3.1 (2024-12-12)
+
+Full Changelog: [v0.3.0...v0.3.1](https://github.com/riza-io/riza-api-node/compare/v0.3.0...v0.3.1)
+
+### Chores
+
+* **internal:** bump cross-spawn to v7.0.6 ([#77](https://github.com/riza-io/riza-api-node/issues/77)) ([a58c5d8](https://github.com/riza-io/riza-api-node/commit/a58c5d8d2fdd6fcc228c0da8f54fc9b7a9d2e07e))
+* **internal:** remove unnecessary getRequestClient function ([#75](https://github.com/riza-io/riza-api-node/issues/75)) ([b1cc992](https://github.com/riza-io/riza-api-node/commit/b1cc9921d6a4435e7d08ceb5ad919bb6f8b194de))
+* **internal:** update isAbsoluteURL ([#79](https://github.com/riza-io/riza-api-node/issues/79)) ([1b8d020](https://github.com/riza-io/riza-api-node/commit/1b8d0202d4bb41a6ce3507560d9e7fcd4f475f75))
+* **types:** nicer error class types + jsdocs ([#78](https://github.com/riza-io/riza-api-node/issues/78)) ([d307171](https://github.com/riza-io/riza-api-node/commit/d3071717aad73e6989d2f11f446c06c72aed22f4))
+
 ## 0.3.0 (2024-12-02)
 
 Full Changelog: [v0.2.0...v0.3.0](https://github.com/riza-io/riza-api-node/compare/v0.2.0...v0.3.0)
