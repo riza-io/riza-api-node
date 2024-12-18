@@ -76,7 +76,7 @@ export interface CommandExecParams {
   revision?: string;
 
   /**
-   * The runtime to use when executing code. Deprecated in favor of `runtime_id` and
+   * The runtime to use when executing code. Deprecated in favor of
    * `runtime_revision_id`.
    */
   runtime?: string;
