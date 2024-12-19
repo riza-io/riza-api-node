@@ -16,6 +16,7 @@ import {
   ToolUpdateParams,
   Tools,
 } from './resources/tools';
+import { Runtime, RuntimeCreateParams, RuntimeListResponse, Runtimes } from './resources/runtimes/runtimes';
 
 export interface ClientOptions {
   /**
@@ -133,6 +134,7 @@ export class Riza extends Core.APIClient {
   secrets: API.Secrets = new API.Secrets(this);
   tools: API.Tools = new API.Tools(this);
   command: API.Command = new API.Command(this);
+  runtimes: API.Runtimes = new API.Runtimes(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -173,6 +175,7 @@ export class Riza extends Core.APIClient {
 Riza.Secrets = Secrets;
 Riza.Tools = Tools;
 Riza.Command = Command;
+Riza.Runtimes = Runtimes;
 export declare namespace Riza {
   export type RequestOptions = Core.RequestOptions;
 
@@ -197,6 +200,13 @@ export declare namespace Riza {
     Command as Command,
     type CommandExecResponse as CommandExecResponse,
     type CommandExecParams as CommandExecParams,
+  };
+
+  export {
+    Runtimes as Runtimes,
+    type Runtime as Runtime,
+    type RuntimeListResponse as RuntimeListResponse,
+    type RuntimeCreateParams as RuntimeCreateParams,
   };
 }
 
