@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.4.1 (2024-12-24)
+
+Full Changelog: [v0.4.0...v0.4.1](https://github.com/riza-io/riza-api-node/compare/v0.4.0...v0.4.1)
+
+### Bug Fixes
+
+* **client:** normalize method ([#88](https://github.com/riza-io/riza-api-node/issues/88)) ([6910793](https://github.com/riza-io/riza-api-node/commit/69107939e6ecb7d62ed404ec200ffa97abf62378))
+
+
+### Chores
+
+* **internal:** codegen related update ([#85](https://github.com/riza-io/riza-api-node/issues/85)) ([ebe5d87](https://github.com/riza-io/riza-api-node/commit/ebe5d87b1f53c5c6ea3b964c0e19e16f41377800))
+* **internal:** codegen related update ([#87](https://github.com/riza-io/riza-api-node/issues/87)) ([7e3bd57](https://github.com/riza-io/riza-api-node/commit/7e3bd571e95cd6b901aa0471a1facbeef0c253c1))
+* **internal:** codegen related update ([#89](https://github.com/riza-io/riza-api-node/issues/89)) ([81e6d3b](https://github.com/riza-io/riza-api-node/commit/81e6d3bb1499e54f0ec1ab2cf954f1e2680e49b8))
+* **internal:** codegen related update ([#90](https://github.com/riza-io/riza-api-node/issues/90)) ([19cd479](https://github.com/riza-io/riza-api-node/commit/19cd479ca966d3e6fdb17f995bb9a08af3f43a24))
+
+
+### Documentation
+
+* minor formatting changes ([#91](https://github.com/riza-io/riza-api-node/issues/91)) ([4e93be3](https://github.com/riza-io/riza-api-node/commit/4e93be3ff8296c6a0382ddeced3a46e884ee2ef6))
+
 ## 0.4.0 (2024-12-18)
 
 Full Changelog: [v0.3.0...v0.4.0](https://github.com/riza-io/riza-api-node/compare/v0.3.0...v0.4.0)
