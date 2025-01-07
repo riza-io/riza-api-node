@@ -94,7 +94,7 @@ export interface ToolUpdateParams {
 
   description?: string | null;
 
-  input_schema?: unknown | null;
+  input_schema?: unknown;
 
   language?: 'PYTHON' | 'JAVASCRIPT' | 'TYPESCRIPT';
 
