@@ -50,7 +50,7 @@ export namespace Runtime {
   export interface ManifestFile {
     contents: string;
 
-    name: 'requirements.txt';
+    name: 'requirements.txt' | 'package.json';
   }
 }
 
@@ -72,7 +72,7 @@ export namespace RuntimeCreateParams {
   export interface ManifestFile {
     contents: string;
 
-    name: 'requirements.txt';
+    name: 'requirements.txt' | 'package.json';
   }
 }
 
