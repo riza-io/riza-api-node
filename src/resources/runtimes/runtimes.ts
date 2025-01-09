@@ -33,7 +33,7 @@ export class Runtimes extends APIResource {
 export interface Runtime {
   id: string;
 
-  language: 'PYTHON' | 'JAVASCRIPT';
+  language: 'python' | 'javascript';
 
   name: string;
 
@@ -59,7 +59,7 @@ export interface RuntimeListResponse {
 }
 
 export interface RuntimeCreateParams {
-  language: 'PYTHON' | 'JAVASCRIPT';
+  language: 'python' | 'javascript';
 
   manifest_file: RuntimeCreateParams.ManifestFile;
 

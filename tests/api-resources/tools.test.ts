@@ -26,7 +26,7 @@ describe('resource tools', () => {
       name: 'name',
       description: 'description',
       input_schema: {},
-      language: 'PYTHON',
+      language: 'python',
     });
   });
 

@@ -40,10 +40,8 @@ describe('resource command', () => {
           },
         ],
       },
-      language: 'PYTHON',
+      language: 'python',
       limits: { execution_timeout: 0, memory_size: 0 },
-      revision: 'revision',
-      runtime: 'runtime',
       runtime_revision_id: 'runtime_revision_id',
       stdin: 'stdin',
     });
