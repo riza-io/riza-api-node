@@ -11,7 +11,7 @@ const client = new Riza({
 describe('resource runtimes', () => {
   test('create: only required params', async () => {
     const responsePromise = client.runtimes.create({
-      language: 'PYTHON',
+      language: 'python',
       manifest_file: { contents: 'contents', name: 'requirements.txt' },
       name: 'name',
     });
@@ -26,7 +26,7 @@ describe('resource runtimes', () => {
 
   test('create: required and optional params', async () => {
     const response = await client.runtimes.create({
-      language: 'PYTHON',
+      language: 'python',
       manifest_file: { contents: 'contents', name: 'requirements.txt' },
       name: 'name',
       additional_python_imports: 'additional_python_imports',

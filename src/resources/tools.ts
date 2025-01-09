@@ -50,7 +50,7 @@ export interface Tool {
 
   input_schema: unknown;
 
-  language: 'PYTHON' | 'JAVASCRIPT' | 'TYPESCRIPT';
+  language: 'python' | 'javascript' | 'typescript';
 
   name: string;
 
@@ -86,7 +86,7 @@ export interface ToolCreateParams {
 
   input_schema?: unknown;
 
-  language?: 'PYTHON' | 'JAVASCRIPT' | 'TYPESCRIPT';
+  language?: 'python' | 'javascript' | 'typescript';
 }
 
 export interface ToolUpdateParams {
@@ -96,7 +96,7 @@ export interface ToolUpdateParams {
 
   input_schema?: unknown;
 
-  language?: 'PYTHON' | 'JAVASCRIPT' | 'TYPESCRIPT';
+  language?: 'python' | 'javascript' | 'typescript';
 
   name?: string | null;
 }

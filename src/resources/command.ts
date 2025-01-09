@@ -66,20 +66,12 @@ export interface CommandExecParams {
   /**
    * The interpreter to use when executing code.
    */
-  language?: 'PYTHON' | 'JAVASCRIPT' | 'TYPESCRIPT' | 'RUBY' | 'PHP';
+  language?: 'python' | 'javascript' | 'typescript' | 'ruby' | 'php';
 
   /**
    * Configuration for execution environment limits.
    */
   limits?: CommandExecParams.Limits | null;
-
-  revision?: string;
-
-  /**
-   * The runtime to use when executing code. Deprecated in favor of
-   * `runtime_revision_id`.
-   */
-  runtime?: string;
 
   /**
    * The ID of the runtime revision to use when executing code.
