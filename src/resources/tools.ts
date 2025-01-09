@@ -80,13 +80,13 @@ export namespace ToolExecResponse {
 export interface ToolCreateParams {
   code: string;
 
+  language: 'python' | 'javascript' | 'typescript';
+
   name: string;
 
   description?: string;
 
   input_schema?: unknown;
-
-  language?: 'python' | 'javascript' | 'typescript';
 }
 
 export interface ToolUpdateParams {
