@@ -10,7 +10,7 @@ const client = new Riza({
 
 describe('resource command', () => {
   test('exec: only required params', async () => {
-    const responsePromise = client.command.exec({ code: 'print("Hello world!")' });
+    const responsePromise = client.command.exec({ code: 'print("Hello world!")', language: 'python' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -23,6 +23,7 @@ describe('resource command', () => {
   test('exec: required and optional params', async () => {
     const response = await client.command.exec({
       code: 'print("Hello world!")',
+      language: 'python',
       allow_http_hosts: ['string'],
       args: ['string'],
       env: { foo: 'string' },
@@ -40,7 +41,6 @@ describe('resource command', () => {
           },
         ],
       },
-      language: 'python',
       limits: { execution_timeout: 0, memory_size: 0 },
       runtime_revision_id: 'runtime_revision_id',
       stdin: 'stdin',
