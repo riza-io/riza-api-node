@@ -10,7 +10,7 @@ const client = new Riza({
 
 describe('resource tools', () => {
   test('create: only required params', async () => {
-    const responsePromise = client.tools.create({ code: 'code', name: 'name' });
+    const responsePromise = client.tools.create({ code: 'code', language: 'python', name: 'name' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -23,10 +23,10 @@ describe('resource tools', () => {
   test('create: required and optional params', async () => {
     const response = await client.tools.create({
       code: 'code',
+      language: 'python',
       name: 'name',
       description: 'description',
       input_schema: {},
-      language: 'PYTHON',
     });
   });
 

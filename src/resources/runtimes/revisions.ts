@@ -42,7 +42,7 @@ export namespace Revision {
   export interface ManifestFile {
     contents: string;
 
-    name: 'requirements.txt';
+    name: 'requirements.txt' | 'package.json';
   }
 }
 
@@ -60,7 +60,7 @@ export namespace RevisionCreateParams {
   export interface ManifestFile {
     contents: string;
 
-    name: 'requirements.txt';
+    name: 'requirements.txt' | 'package.json';
   }
 }
 
