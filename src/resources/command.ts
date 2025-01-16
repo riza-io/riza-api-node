@@ -39,6 +39,11 @@ export interface CommandExecParams {
   code: string;
 
   /**
+   * The interpreter to use when executing code.
+   */
+  language: 'python' | 'javascript' | 'typescript' | 'ruby' | 'php';
+
+  /**
    * List of allowed hosts for HTTP requests.
    */
   allow_http_hosts?: Array<string>;
@@ -62,11 +67,6 @@ export interface CommandExecParams {
    * Configuration for HTTP requests and authentication.
    */
   http?: CommandExecParams.HTTP | null;
-
-  /**
-   * The interpreter to use when executing code.
-   */
-  language?: 'python' | 'javascript' | 'typescript' | 'ruby' | 'php';
 
   /**
    * Configuration for execution environment limits.
