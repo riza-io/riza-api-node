@@ -30,23 +30,23 @@ export interface CommandExecResponse {
    * The exit code returned by the script. Will often be '0' on success and non-zero
    * on failure.
    */
-  exit_code?: number;
+  exit_code: number;
 
   /**
    * The contents of 'stderr' after executing the script.
    */
-  stderr?: string;
+  stderr: string;
 
   /**
    * The contents of 'stdout' after executing the script.
    */
-  stdout?: string;
+  stdout: string;
 }
 
 export interface CommandExecFuncResponse {
-  execution?: CommandExecFuncResponse.Execution;
+  execution: CommandExecFuncResponse.Execution;
 
-  output?: unknown;
+  output: unknown;
 
   /**
    * The status of the output. "valid" means your function executed successfully and
@@ -54,7 +54,7 @@ export interface CommandExecFuncResponse {
    * means your function executed successfully, but returned a nonserializable
    * object. "error" means your function failed to execute.
    */
-  output_status?: 'error' | 'json_serialization_error' | 'valid';
+  output_status: 'error' | 'json_serialization_error' | 'valid';
 }
 
 export namespace CommandExecFuncResponse {
@@ -63,17 +63,17 @@ export namespace CommandExecFuncResponse {
      * The exit code returned by the script. Will often be '0' on success and non-zero
      * on failure.
      */
-    exit_code?: number;
+    exit_code: number;
 
     /**
      * The contents of 'stderr' after executing the script.
      */
-    stderr?: string;
+    stderr: string;
 
     /**
      * The contents of 'stdout' after executing the script.
      */
-    stdout?: string;
+    stdout: string;
   }
 }
 
