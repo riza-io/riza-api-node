@@ -5,7 +5,13 @@ import * as Core from './core';
 import * as Errors from './error';
 import * as Uploads from './uploads';
 import * as API from './resources/index';
-import { Command, CommandExecParams, CommandExecResponse } from './resources/command';
+import {
+  Command,
+  CommandExecFuncParams,
+  CommandExecFuncResponse,
+  CommandExecParams,
+  CommandExecResponse,
+} from './resources/command';
 import { Secret, SecretCreateParams, SecretListResponse, Secrets } from './resources/secrets';
 import {
   Tool,
@@ -199,7 +205,9 @@ export declare namespace Riza {
   export {
     Command as Command,
     type CommandExecResponse as CommandExecResponse,
+    type CommandExecFuncResponse as CommandExecFuncResponse,
     type CommandExecParams as CommandExecParams,
+    type CommandExecFuncParams as CommandExecFuncParams,
   };
 
   export {
