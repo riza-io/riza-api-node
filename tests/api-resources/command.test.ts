@@ -49,7 +49,7 @@ describe('resource command', () => {
 
   test('execFunc: only required params', async () => {
     const responsePromise = client.command.execFunc({
-      code: 'def execute(input): return { "name": "John", "executed": True }',
+      code: 'def execute(input): return { "name": input["name"], "executed": True }',
       language: 'python',
     });
     const rawResponse = await responsePromise.asResponse();
@@ -63,7 +63,7 @@ describe('resource command', () => {
 
   test('execFunc: required and optional params', async () => {
     const response = await client.command.execFunc({
-      code: 'def execute(input): return { "name": "John", "executed": True }',
+      code: 'def execute(input): return { "name": input["name"], "executed": True }',
       language: 'python',
       env: { foo: 'string' },
       files: [{ contents: 'contents', path: 'path' }],
