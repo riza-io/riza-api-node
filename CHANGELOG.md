@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.7.0 (2025-01-23)
+
+Full Changelog: [v0.6.0...v0.7.0](https://github.com/riza-io/riza-api-node/compare/v0.6.0...v0.7.0)
+
+### Features
+
+* **api:** api update ([#105](https://github.com/riza-io/riza-api-node/issues/105)) ([93d32a2](https://github.com/riza-io/riza-api-node/commit/93d32a2fcab691d4f63f0f852db7017dc40a2de9))
+
+
+### Chores
+
+* **internal:** add test ([#104](https://github.com/riza-io/riza-api-node/issues/104)) ([c0b757e](https://github.com/riza-io/riza-api-node/commit/c0b757e8ab8bf25044bfa69fdf9eed3426807240))
+* **internal:** codegen related update ([#102](https://github.com/riza-io/riza-api-node/issues/102)) ([7153533](https://github.com/riza-io/riza-api-node/commit/71535339885d4349d0b5a312fc50b19da3276e3a))
+
 ## 0.6.0 (2025-01-16)
 
 Full Changelog: [v0.5.0...v0.6.0](https://github.com/riza-io/riza-api-node/compare/v0.5.0...v0.6.0)
