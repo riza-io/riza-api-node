@@ -46,4 +46,43 @@ describe('resource command', () => {
       stdin: 'stdin',
     });
   });
+
+  test('execFunc: only required params', async () => {
+    const responsePromise = client.command.execFunc({
+      code: 'def execute(input): return { "name": "John", "executed": True }',
+      language: 'python',
+    });
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('execFunc: required and optional params', async () => {
+    const response = await client.command.execFunc({
+      code: 'def execute(input): return { "name": "John", "executed": True }',
+      language: 'python',
+      env: { foo: 'string' },
+      files: [{ contents: 'contents', path: 'path' }],
+      http: {
+        allow: [
+          {
+            auth: {
+              basic: { password: 'password', user_id: 'user_id' },
+              bearer: { token: 'token' },
+              header: { name: 'name', value: 'value' },
+              query: { key: 'key', value: 'value' },
+            },
+            host: 'host',
+          },
+        ],
+      },
+      input: { name: 'John' },
+      limits: { execution_timeout: 0, memory_size: 0 },
+      runtime_revision_id: 'runtime_revision_id',
+    });
+  });
 });

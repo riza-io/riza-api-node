@@ -1,6 +1,12 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { Command, type CommandExecResponse, type CommandExecParams } from './command';
+export {
+  Command,
+  type CommandExecResponse,
+  type CommandExecFuncResponse,
+  type CommandExecParams,
+  type CommandExecFuncParams,
+} from './command';
 export {
   Runtimes,
   type Runtime,
