@@ -243,7 +243,7 @@ export interface CommandExecFuncParams {
   /**
    * The interpreter to use when executing code.
    */
-  language: 'python' | 'javascript' | 'typescript' | 'ruby' | 'php';
+  language: 'python' | 'javascript' | 'typescript';
 
   /**
    * Set of key-value pairs to add to the function's execution environment.
