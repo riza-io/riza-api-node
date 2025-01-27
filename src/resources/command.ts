@@ -246,7 +246,7 @@ export interface CommandExecFuncParams {
   language: 'python' | 'javascript' | 'typescript' | 'ruby' | 'php';
 
   /**
-   * Set of key-value pairs to add to the script's execution environment.
+   * Set of key-value pairs to add to the function's execution environment.
    */
   env?: Record<string, string>;
 
