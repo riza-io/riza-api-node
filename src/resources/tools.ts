@@ -42,18 +42,39 @@ export class Tools extends APIResource {
 }
 
 export interface Tool {
+  /**
+   * The ID of the tool.
+   */
   id: string;
 
+  /**
+   * The code of the tool. You must define a function named "execute" that takes in a
+   * single argument and returns a JSON-serializable value. The argument will be the
+   * "input" passed when executing the tool, and will match the input schema.
+   */
   code: string;
 
+  /**
+   * A description of the tool.
+   */
   description: string;
 
   input_schema: unknown;
 
+  /**
+   * The language of the tool's code.
+   */
   language: 'python' | 'javascript' | 'typescript';
 
+  /**
+   * The name of the tool.
+   */
   name: string;
 
+  /**
+   * The ID of the tool's current revision. This is used to pin executions to
+   * specific versions of the Tool, even if the Tool is updated later.
+   */
   revision_id: string;
 }
 
@@ -62,12 +83,26 @@ export interface ToolListResponse {
 }
 
 export interface ToolExecResponse {
+  /**
+   * The execution details of the Tool.
+   */
   execution: ToolExecResponse.Execution;
 
-  output?: unknown;
+  output: unknown;
+
+  /**
+   * The status of the output. "valid" means your Tool executed successfully and
+   * returned a valid JSON-serializable object, or void. "json_serialization_error"
+   * means your Tool executed successfully, but returned a nonserializable object.
+   * "error" means your Tool failed to execute.
+   */
+  output_status: 'error' | 'json_serialization_error' | 'valid';
 }
 
 export namespace ToolExecResponse {
+  /**
+   * The execution details of the Tool.
+   */
   export interface Execution {
     exit_code: number;
 
@@ -78,12 +113,26 @@ export namespace ToolExecResponse {
 }
 
 export interface ToolCreateParams {
+  /**
+   * The code of the tool. You must define a function named "execute" that takes in a
+   * single argument and returns a JSON-serializable value. The argument will be the
+   * "input" passed when executing the tool, and will match the input schema.
+   */
   code: string;
 
+  /**
+   * The language of the tool's code.
+   */
   language: 'python' | 'javascript' | 'typescript';
 
+  /**
+   * The name of the tool.
+   */
   name: string;
 
+  /**
+   * A description of the tool.
+   */
   description?: string;
 
   input_schema?: unknown;
@@ -102,16 +151,30 @@ export interface ToolUpdateParams {
 }
 
 export interface ToolExecParams {
+  /**
+   * Set of key-value pairs to add to the tool's execution environment.
+   */
   env?: Array<ToolExecParams.Env>;
 
+  /**
+   * Configuration for HTTP requests and authentication.
+   */
   http?: ToolExecParams.HTTP | null;
 
   input?: unknown;
 
+  /**
+   * The Tool revision ID to execute. This optional parmeter is used to pin
+   * executions to specific versions of the Tool. If not provided, the latest
+   * (current) version of the Tool will be executed.
+   */
   revision_id?: string;
 }
 
 export namespace ToolExecParams {
+  /**
+   * Set of key-value pairs to add to the tool's execution environment.
+   */
   export interface Env {
     name: string;
 
@@ -120,6 +183,9 @@ export namespace ToolExecParams {
     value?: string;
   }
 
+  /**
+   * Configuration for HTTP requests and authentication.
+   */
   export interface HTTP {
     /**
      * List of allowed HTTP hosts and associated authentication.
