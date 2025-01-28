@@ -46,6 +46,9 @@ export interface CommandExecResponse {
 export interface CommandExecFuncResponse {
   execution: CommandExecFuncResponse.Execution;
 
+  /**
+   * The output of the function.
+   */
   output: unknown;
 
   /**
@@ -260,6 +263,11 @@ export interface CommandExecFuncParams {
    */
   http?: CommandExecFuncParams.HTTP;
 
+  /**
+   * The input to the function. This must be a valid JSON-serializable object. If you
+   * do not pass an input, your function will be called with None (Python) or null
+   * (JavaScript/TypeScript) as the argument.
+   */
   input?: unknown;
 
   /**
