@@ -72,10 +72,17 @@ export interface Tool {
   name: string;
 
   /**
-   * The ID of the tool's current revision. This is used to pin executions to
-   * specific versions of the Tool, even if the Tool is updated later.
+   * The ID of the tool's current revision. This is used to pin executions to a
+   * specific version of the tool, even if the tool is updated later.
    */
   revision_id: string;
+
+  /**
+   * The ID of the custom runtime revision that the tool uses for executions. This
+   * pins executions to specific version of a custom runtime runtime, even if the
+   * runtime is updated later.
+   */
+  runtime_revision_id?: string;
 }
 
 export interface ToolListResponse {
@@ -136,18 +143,44 @@ export interface ToolCreateParams {
   description?: string;
 
   input_schema?: unknown;
+
+  /**
+   * The ID of the runtime revision to use when executing the tool.
+   */
+  runtime_revision_id?: string;
 }
 
 export interface ToolUpdateParams {
-  code?: string | null;
+  /**
+   * The code of the tool. You must define a function named "execute" that takes in a
+   * single argument and returns a JSON-serializable value. The argument will be the
+   * "input" passed when executing the tool, and will match the input schema.
+   */
+  code?: string;
 
-  description?: string | null;
+  /**
+   * A description of the tool.
+   */
+  description?: string;
 
   input_schema?: unknown;
 
+  /**
+   * The language of the tool's code.
+   */
   language?: 'python' | 'javascript' | 'typescript';
 
-  name?: string | null;
+  /**
+   * The name of the tool.
+   */
+  name?: string;
+
+  /**
+   * The ID of the custom runtime revision that the tool uses for executions. This is
+   * used to pin executions to a specific version of a custom runtime, even if the
+   * runtime is updated later.
+   */
+  runtime_revision_id?: string;
 }
 
 export interface ToolExecParams {
@@ -159,7 +192,7 @@ export interface ToolExecParams {
   /**
    * Configuration for HTTP requests and authentication.
    */
-  http?: ToolExecParams.HTTP | null;
+  http?: ToolExecParams.HTTP;
 
   input?: unknown;
 
@@ -214,14 +247,14 @@ export namespace ToolExecParams {
        * Authentication configuration for outbound requests to this host.
        */
       export interface Auth {
-        basic?: Auth.Basic | null;
+        basic?: Auth.Basic;
 
         /**
          * Configuration to add an 'Authorization' header using the 'Bearer' scheme.
          */
-        bearer?: Auth.Bearer | null;
+        bearer?: Auth.Bearer;
 
-        query?: Auth.Query | null;
+        query?: Auth.Query;
       }
 
       export namespace Auth {

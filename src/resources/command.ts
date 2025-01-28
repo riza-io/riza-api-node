@@ -111,12 +111,12 @@ export interface CommandExecParams {
   /**
    * Configuration for HTTP requests and authentication.
    */
-  http?: CommandExecParams.HTTP | null;
+  http?: CommandExecParams.HTTP;
 
   /**
    * Configuration for execution environment limits.
    */
-  limits?: CommandExecParams.Limits | null;
+  limits?: CommandExecParams.Limits;
 
   /**
    * The ID of the runtime revision to use when executing code.
@@ -173,16 +173,16 @@ export namespace CommandExecParams {
        * Authentication configuration for outbound requests to this host.
        */
       export interface Auth {
-        basic?: Auth.Basic | null;
+        basic?: Auth.Basic;
 
         /**
          * Configuration to add an 'Authorization' header using the 'Bearer' scheme.
          */
-        bearer?: Auth.Bearer | null;
+        bearer?: Auth.Bearer;
 
-        header?: Auth.Header | null;
+        header?: Auth.Header;
 
-        query?: Auth.Query | null;
+        query?: Auth.Query;
       }
 
       export namespace Auth {
@@ -258,14 +258,14 @@ export interface CommandExecFuncParams {
   /**
    * Configuration for HTTP requests and authentication.
    */
-  http?: CommandExecFuncParams.HTTP | null;
+  http?: CommandExecFuncParams.HTTP;
 
   input?: unknown;
 
   /**
    * Configuration for execution environment limits.
    */
-  limits?: CommandExecFuncParams.Limits | null;
+  limits?: CommandExecFuncParams.Limits;
 
   /**
    * The ID of the runtime revision to use when executing code.
@@ -317,16 +317,16 @@ export namespace CommandExecFuncParams {
        * Authentication configuration for outbound requests to this host.
        */
       export interface Auth {
-        basic?: Auth.Basic | null;
+        basic?: Auth.Basic;
 
         /**
          * Configuration to add an 'Authorization' header using the 'Bearer' scheme.
          */
-        bearer?: Auth.Bearer | null;
+        bearer?: Auth.Bearer;
 
-        header?: Auth.Header | null;
+        header?: Auth.Header;
 
-        query?: Auth.Query | null;
+        query?: Auth.Query;
       }
 
       export namespace Auth {
