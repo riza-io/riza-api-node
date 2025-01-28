@@ -59,6 +59,9 @@ export interface Tool {
    */
   description: string;
 
+  /**
+   * The input schema of the tool. This must be a valid JSON Schema object.
+   */
   input_schema: unknown;
 
   /**
@@ -95,6 +98,9 @@ export interface ToolExecResponse {
    */
   execution: ToolExecResponse.Execution;
 
+  /**
+   * The returned value of the Tool's execute function.
+   */
   output: unknown;
 
   /**
@@ -142,6 +148,9 @@ export interface ToolCreateParams {
    */
   description?: string;
 
+  /**
+   * The input schema of the tool. This must be a valid JSON Schema object.
+   */
   input_schema?: unknown;
 
   /**
@@ -163,6 +172,9 @@ export interface ToolUpdateParams {
    */
   description?: string;
 
+  /**
+   * The input schema of the tool. This must be a valid JSON Schema object.
+   */
   input_schema?: unknown;
 
   /**
@@ -194,6 +206,10 @@ export interface ToolExecParams {
    */
   http?: ToolExecParams.HTTP;
 
+  /**
+   * The input to the tool. This must be a valid JSON-serializable object. It will be
+   * validated against the tool's input schema.
+   */
   input?: unknown;
 
   /**
