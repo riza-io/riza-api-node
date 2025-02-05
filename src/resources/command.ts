@@ -30,23 +30,26 @@ export interface CommandExecResponse {
    * The exit code returned by the script. Will often be '0' on success and non-zero
    * on failure.
    */
-  exit_code?: number;
+  exit_code: number;
 
   /**
    * The contents of 'stderr' after executing the script.
    */
-  stderr?: string;
+  stderr: string;
 
   /**
    * The contents of 'stdout' after executing the script.
    */
-  stdout?: string;
+  stdout: string;
 }
 
 export interface CommandExecFuncResponse {
-  execution?: CommandExecFuncResponse.Execution;
+  execution: CommandExecFuncResponse.Execution;
 
-  output?: unknown;
+  /**
+   * The output of the function.
+   */
+  output: unknown;
 
   /**
    * The status of the output. "valid" means your function executed successfully and
@@ -54,7 +57,7 @@ export interface CommandExecFuncResponse {
    * means your function executed successfully, but returned a nonserializable
    * object. "error" means your function failed to execute.
    */
-  output_status?: 'error' | 'json_serialization_error' | 'valid';
+  output_status: 'error' | 'json_serialization_error' | 'valid';
 }
 
 export namespace CommandExecFuncResponse {
@@ -63,17 +66,17 @@ export namespace CommandExecFuncResponse {
      * The exit code returned by the script. Will often be '0' on success and non-zero
      * on failure.
      */
-    exit_code?: number;
+    exit_code: number;
 
     /**
      * The contents of 'stderr' after executing the script.
      */
-    stderr?: string;
+    stderr: string;
 
     /**
      * The contents of 'stdout' after executing the script.
      */
-    stdout?: string;
+    stdout: string;
   }
 }
 
@@ -111,12 +114,12 @@ export interface CommandExecParams {
   /**
    * Configuration for HTTP requests and authentication.
    */
-  http?: CommandExecParams.HTTP | null;
+  http?: CommandExecParams.HTTP;
 
   /**
    * Configuration for execution environment limits.
    */
-  limits?: CommandExecParams.Limits | null;
+  limits?: CommandExecParams.Limits;
 
   /**
    * The ID of the runtime revision to use when executing code.
@@ -173,16 +176,16 @@ export namespace CommandExecParams {
        * Authentication configuration for outbound requests to this host.
        */
       export interface Auth {
-        basic?: Auth.Basic | null;
+        basic?: Auth.Basic;
 
         /**
          * Configuration to add an 'Authorization' header using the 'Bearer' scheme.
          */
-        bearer?: Auth.Bearer | null;
+        bearer?: Auth.Bearer;
 
-        header?: Auth.Header | null;
+        header?: Auth.Header;
 
-        query?: Auth.Query | null;
+        query?: Auth.Query;
       }
 
       export namespace Auth {
@@ -235,18 +238,18 @@ export namespace CommandExecParams {
 
 export interface CommandExecFuncParams {
   /**
-   * The function to execute. Your code must define a function named 'execute' and
-   * return a JSON-serializable value.
+   * The function to execute. Your code must define a function named "execute" that
+   * takes in a single argument and returns a JSON-serializable value.
    */
   code: string;
 
   /**
    * The interpreter to use when executing code.
    */
-  language: 'python' | 'javascript' | 'typescript' | 'ruby' | 'php';
+  language: 'python' | 'javascript' | 'typescript';
 
   /**
-   * Set of key-value pairs to add to the script's execution environment.
+   * Set of key-value pairs to add to the function's execution environment.
    */
   env?: Record<string, string>;
 
@@ -258,14 +261,19 @@ export interface CommandExecFuncParams {
   /**
    * Configuration for HTTP requests and authentication.
    */
-  http?: CommandExecFuncParams.HTTP | null;
+  http?: CommandExecFuncParams.HTTP;
 
+  /**
+   * The input to the function. This must be a valid JSON-serializable object. If you
+   * do not pass an input, your function will be called with None (Python) or null
+   * (JavaScript/TypeScript) as the argument.
+   */
   input?: unknown;
 
   /**
    * Configuration for execution environment limits.
    */
-  limits?: CommandExecFuncParams.Limits | null;
+  limits?: CommandExecFuncParams.Limits;
 
   /**
    * The ID of the runtime revision to use when executing code.
@@ -317,16 +325,16 @@ export namespace CommandExecFuncParams {
        * Authentication configuration for outbound requests to this host.
        */
       export interface Auth {
-        basic?: Auth.Basic | null;
+        basic?: Auth.Basic;
 
         /**
          * Configuration to add an 'Authorization' header using the 'Bearer' scheme.
          */
-        bearer?: Auth.Bearer | null;
+        bearer?: Auth.Bearer;
 
-        header?: Auth.Header | null;
+        header?: Auth.Header;
 
-        query?: Auth.Query | null;
+        query?: Auth.Query;
       }
 
       export namespace Auth {

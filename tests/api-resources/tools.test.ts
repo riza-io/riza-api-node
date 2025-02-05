@@ -27,6 +27,7 @@ describe('resource tools', () => {
       name: 'name',
       description: 'description',
       input_schema: {},
+      runtime_revision_id: 'runtime_revision_id',
     });
   });
 
