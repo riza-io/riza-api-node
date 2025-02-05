@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.8.0 (2025-02-05)
+
+Full Changelog: [v0.7.0...v0.8.0](https://github.com/riza-io/riza-api-node/compare/v0.7.0...v0.8.0)
+
+### Features
+
+* **api:** api update ([#107](https://github.com/riza-io/riza-api-node/issues/107)) ([e6f6cfb](https://github.com/riza-io/riza-api-node/commit/e6f6cfb688a78fb7303b416a7c76960f66681424))
+* **api:** api update ([#109](https://github.com/riza-io/riza-api-node/issues/109)) ([0d98ed2](https://github.com/riza-io/riza-api-node/commit/0d98ed21182ea36f59c4fe27c274ee5dda49fb54))
+* **api:** api update ([#110](https://github.com/riza-io/riza-api-node/issues/110)) ([44950f3](https://github.com/riza-io/riza-api-node/commit/44950f345b4e386efb93339b45767af4ee12be86))
+* **api:** api update ([#111](https://github.com/riza-io/riza-api-node/issues/111)) ([b776ef2](https://github.com/riza-io/riza-api-node/commit/b776ef258d3bfdac865e65754bbbdd0d1c090c47))
+* **api:** api update ([#112](https://github.com/riza-io/riza-api-node/issues/112)) ([8e9343b](https://github.com/riza-io/riza-api-node/commit/8e9343bdc600195f1a8878f1e4fcc6470cda038b))
+* **api:** api update ([#113](https://github.com/riza-io/riza-api-node/issues/113)) ([475c7a8](https://github.com/riza-io/riza-api-node/commit/475c7a8981542bd0915a604d3774fc3e6517d6e3))
+* **api:** api update ([#114](https://github.com/riza-io/riza-api-node/issues/114)) ([10983d6](https://github.com/riza-io/riza-api-node/commit/10983d665710273a4a46058afb75464ea586b14d))
+* **client:** send `X-Stainless-Timeout` header ([#115](https://github.com/riza-io/riza-api-node/issues/115)) ([82497db](https://github.com/riza-io/riza-api-node/commit/82497db04479549a02479b291cf3ab927ce3568c))
+
 ## 0.7.0 (2025-01-23)
 
 Full Changelog: [v0.6.0...v0.7.0](https://github.com/riza-io/riza-api-node/compare/v0.6.0...v0.7.0)
