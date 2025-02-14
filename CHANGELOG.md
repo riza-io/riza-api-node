@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.9.0 (2025-02-14)
+
+Full Changelog: [v0.8.0...v0.9.0](https://github.com/riza-io/riza-api-node/compare/v0.8.0...v0.9.0)
+
+### Features
+
+* **api:** api update ([#119](https://github.com/riza-io/riza-api-node/issues/119)) ([a898707](https://github.com/riza-io/riza-api-node/commit/a898707e05f955b943d821a64c2649b4f36db9fd))
+
+
+### Bug Fixes
+
+* **client:** fix export map for index exports ([#117](https://github.com/riza-io/riza-api-node/issues/117)) ([44a360a](https://github.com/riza-io/riza-api-node/commit/44a360add88039a9d506530b6bef473c2bc53af9))
+
 ## 0.8.0 (2025-02-05)
 
 Full Changelog: [v0.7.0...v0.8.0](https://github.com/riza-io/riza-api-node/compare/v0.7.0...v0.8.0)
