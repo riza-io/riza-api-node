@@ -24,7 +24,6 @@ describe('resource command', () => {
     const response = await client.command.exec({
       code: 'print("Hello world!")',
       language: 'python',
-      allow_http_hosts: ['string'],
       args: ['string'],
       env: { foo: 'string' },
       files: [{ contents: 'contents', path: 'path' }],
