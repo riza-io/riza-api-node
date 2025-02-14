@@ -92,11 +92,6 @@ export interface CommandExecParams {
   language: 'python' | 'javascript' | 'typescript' | 'ruby' | 'php';
 
   /**
-   * List of allowed hosts for HTTP requests.
-   */
-  allow_http_hosts?: Array<string>;
-
-  /**
    * List of command line arguments to pass to the script.
    */
   args?: Array<string>;
