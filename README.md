@@ -29,7 +29,7 @@ const client = new Riza({
 async function main() {
   const response = await client.command.exec({ code: "print('Hello, World!')", language: 'python' });
 
-  console.log(response.exit_code);
+  console.log(response.duration);
 }
 
 main();
@@ -159,7 +159,7 @@ const { data: response, response: raw } = await client.command
   .exec({ code: "print('Hello, World!')", language: 'python' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(response.exit_code);
+console.log(response.duration);
 ```
 
 ### Making custom/undocumented requests

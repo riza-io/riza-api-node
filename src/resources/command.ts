@@ -27,6 +27,11 @@ export class Command extends APIResource {
 
 export interface CommandExecResponse {
   /**
+   * The execution time of the script in milliseconds.
+   */
+  duration: number;
+
+  /**
    * The exit code returned by the script. Will often be '0' on success and non-zero
    * on failure.
    */
@@ -68,6 +73,11 @@ export namespace CommandExecFuncResponse {
    * The execution details of the function.
    */
   export interface Execution {
+    /**
+     * The execution time of the function in milliseconds.
+     */
+    duration: number;
+
     /**
      * The exit code returned by the function. Will often be '0' on success and
      * non-zero on failure.
