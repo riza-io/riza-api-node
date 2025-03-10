@@ -118,6 +118,11 @@ export namespace ToolExecResponse {
    */
   export interface Execution {
     /**
+     * The execution time of the function in milliseconds.
+     */
+    duration: number;
+
+    /**
      * The exit code returned by the function. Will often be '0' on success and
      * non-zero on failure.
      */
