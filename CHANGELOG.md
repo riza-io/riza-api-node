@@ -1,5 +1,31 @@
 # Changelog
 
+## 0.9.0 (2025-03-11)
+
+Full Changelog: [v0.8.0...v0.9.0](https://github.com/riza-io/riza-api-node/compare/v0.8.0...v0.9.0)
+
+### Features
+
+* add SKIP_BREW env var to ./scripts/bootstrap ([#125](https://github.com/riza-io/riza-api-node/issues/125)) ([4807027](https://github.com/riza-io/riza-api-node/commit/4807027be28f081b077f93e5ba69fa2fc1fd0f75))
+* **api:** api update ([#119](https://github.com/riza-io/riza-api-node/issues/119)) ([a898707](https://github.com/riza-io/riza-api-node/commit/a898707e05f955b943d821a64c2649b4f36db9fd))
+* **api:** api update ([#121](https://github.com/riza-io/riza-api-node/issues/121)) ([22856d0](https://github.com/riza-io/riza-api-node/commit/22856d05281c35958e907b1150b4c601316b92df))
+* **api:** api update ([#124](https://github.com/riza-io/riza-api-node/issues/124)) ([f32ba1b](https://github.com/riza-io/riza-api-node/commit/f32ba1bb2e38e86bc9c4e6f3ad5e5ee15ccafa3c))
+
+
+### Bug Fixes
+
+* **client:** fix export map for index exports ([#117](https://github.com/riza-io/riza-api-node/issues/117)) ([44a360a](https://github.com/riza-io/riza-api-node/commit/44a360add88039a9d506530b6bef473c2bc53af9))
+
+
+### Chores
+
+* **internal:** fix devcontainers setup ([#120](https://github.com/riza-io/riza-api-node/issues/120)) ([2359ecf](https://github.com/riza-io/riza-api-node/commit/2359ecf85bfba07a060e3e6791f47baa202e66c5))
+
+
+### Documentation
+
+* update URLs from stainlessapi.com to stainless.com ([#122](https://github.com/riza-io/riza-api-node/issues/122)) ([c68b6ff](https://github.com/riza-io/riza-api-node/commit/c68b6ff6254b9cb5dd27866f63dbd726548cfedd))
+
 ## 0.8.0 (2025-02-05)
 
 Full Changelog: [v0.7.0...v0.8.0](https://github.com/riza-io/riza-api-node/compare/v0.7.0...v0.8.0)
