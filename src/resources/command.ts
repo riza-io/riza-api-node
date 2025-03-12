@@ -27,6 +27,11 @@ export class Command extends APIResource {
 
 export interface CommandExecResponse {
   /**
+   * The execution time of the script in milliseconds.
+   */
+  duration: number;
+
+  /**
    * The exit code returned by the script. Will often be '0' on success and non-zero
    * on failure.
    */
@@ -44,6 +49,9 @@ export interface CommandExecResponse {
 }
 
 export interface CommandExecFuncResponse {
+  /**
+   * The execution details of the function.
+   */
   execution: CommandExecFuncResponse.Execution;
 
   /**
@@ -61,20 +69,28 @@ export interface CommandExecFuncResponse {
 }
 
 export namespace CommandExecFuncResponse {
+  /**
+   * The execution details of the function.
+   */
   export interface Execution {
     /**
-     * The exit code returned by the script. Will often be '0' on success and non-zero
-     * on failure.
+     * The execution time of the function in milliseconds.
+     */
+    duration: number;
+
+    /**
+     * The exit code returned by the function. Will often be '0' on success and
+     * non-zero on failure.
      */
     exit_code: number;
 
     /**
-     * The contents of 'stderr' after executing the script.
+     * The contents of 'stderr' after executing the function.
      */
     stderr: string;
 
     /**
-     * The contents of 'stdout' after executing the script.
+     * The contents of 'stdout' after executing the function.
      */
     stdout: string;
   }
@@ -90,11 +106,6 @@ export interface CommandExecParams {
    * The interpreter to use when executing code.
    */
   language: 'python' | 'javascript' | 'typescript' | 'ruby' | 'php';
-
-  /**
-   * List of allowed hosts for HTTP requests.
-   */
-  allow_http_hosts?: Array<string>;
 
   /**
    * List of command line arguments to pass to the script.

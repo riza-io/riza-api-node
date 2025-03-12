@@ -94,7 +94,7 @@ export interface ToolListResponse {
 
 export interface ToolExecResponse {
   /**
-   * The execution details of the Tool.
+   * The execution details of the function.
    */
   execution: ToolExecResponse.Execution;
 
@@ -114,13 +114,28 @@ export interface ToolExecResponse {
 
 export namespace ToolExecResponse {
   /**
-   * The execution details of the Tool.
+   * The execution details of the function.
    */
   export interface Execution {
+    /**
+     * The execution time of the function in milliseconds.
+     */
+    duration: number;
+
+    /**
+     * The exit code returned by the function. Will often be '0' on success and
+     * non-zero on failure.
+     */
     exit_code: number;
 
+    /**
+     * The contents of 'stderr' after executing the function.
+     */
     stderr: string;
 
+    /**
+     * The contents of 'stdout' after executing the function.
+     */
     stdout: string;
   }
 }

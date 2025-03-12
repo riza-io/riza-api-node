@@ -6,7 +6,7 @@ This library provides convenient access to the Riza REST API from server-side Ty
 
 The REST API documentation can be found on [docs.riza.io](https://docs.riza.io). The full API of this library can be found in [api.md](api.md).
 
-It is generated with [Stainless](https://www.stainlessapi.com/).
+It is generated with [Stainless](https://www.stainless.com/).
 
 ## Installation
 
@@ -29,7 +29,7 @@ const client = new Riza({
 async function main() {
   const response = await client.command.exec({ code: "print('Hello, World!')", language: 'python' });
 
-  console.log(response.exit_code);
+  console.log(response.duration);
 }
 
 main();
@@ -159,7 +159,7 @@ const { data: response, response: raw } = await client.command
   .exec({ code: "print('Hello, World!')", language: 'python' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(response.exit_code);
+console.log(response.duration);
 ```
 
 ### Making custom/undocumented requests
