@@ -39,7 +39,7 @@ export interface Runtime {
 
   revision_id: string;
 
-  status: string;
+  status: 'pending' | 'building' | 'succeeded' | 'failed' | 'cancelled';
 
   additional_python_imports?: string;
 
