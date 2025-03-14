@@ -33,7 +33,7 @@ export interface Revision {
 
   runtime_id: string;
 
-  status: 'unspecified' | 'pending' | 'building' | 'succeeded' | 'failed' | 'cancelled';
+  status: 'pending' | 'building' | 'succeeded' | 'failed' | 'cancelled';
 
   additional_python_imports?: string;
 }
