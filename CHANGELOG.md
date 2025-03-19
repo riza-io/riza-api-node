@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.10.0 (2025-03-14)
+
+Full Changelog: [v0.9.0...v0.10.0](https://github.com/riza-io/riza-api-node/compare/v0.9.0...v0.10.0)
+
+### Features
+
+* **api:** api update ([#129](https://github.com/riza-io/riza-api-node/issues/129)) ([98638cb](https://github.com/riza-io/riza-api-node/commit/98638cb92f96f9a49cd2fe14cecb680d2a113169))
+
+
+### Bug Fixes
+
+* **exports:** ensure resource imports don't require /index ([#131](https://github.com/riza-io/riza-api-node/issues/131)) ([3e1a232](https://github.com/riza-io/riza-api-node/commit/3e1a232d3477e0a5dce273a545069f275516f88c))
+
+
+### Chores
+
+* **internal:** codegen related update ([#127](https://github.com/riza-io/riza-api-node/issues/127)) ([8999cc2](https://github.com/riza-io/riza-api-node/commit/8999cc28285ec37890a584b072cc573ee1a4cd92))
+* **internal:** remove extra empty newlines ([#130](https://github.com/riza-io/riza-api-node/issues/130)) ([e243ef3](https://github.com/riza-io/riza-api-node/commit/e243ef303963b5150e3af39cb380fecc4f2e4250))
+
 ## 0.9.0 (2025-03-11)
 
 Full Changelog: [v0.8.0...v0.9.0](https://github.com/riza-io/riza-api-node/compare/v0.8.0...v0.9.0)
