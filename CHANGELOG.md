@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.10.1 (2025-03-22)
+
+Full Changelog: [v0.10.0...v0.10.1](https://github.com/riza-io/riza-api-node/compare/v0.10.0...v0.10.1)
+
+### Bug Fixes
+
+* avoid type error in certain environments ([#136](https://github.com/riza-io/riza-api-node/issues/136)) ([2e06e0e](https://github.com/riza-io/riza-api-node/commit/2e06e0e5122e6c37b40f8be4b3f4be6bd94daffa))
+
+
+### Chores
+
+* **exports:** cleaner resource index imports ([#133](https://github.com/riza-io/riza-api-node/issues/133)) ([1420dbc](https://github.com/riza-io/riza-api-node/commit/1420dbc5ef146282dd8e7f1e66123e1f2004ae5b))
+* **exports:** stop using path fallbacks ([#135](https://github.com/riza-io/riza-api-node/issues/135)) ([20c022c](https://github.com/riza-io/riza-api-node/commit/20c022cd1b0eab5bbfec75a47601289737334b0e))
+
 ## 0.10.0 (2025-03-14)
 
 Full Changelog: [v0.9.0...v0.10.0](https://github.com/riza-io/riza-api-node/compare/v0.9.0...v0.10.0)
