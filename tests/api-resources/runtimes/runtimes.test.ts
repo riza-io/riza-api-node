@@ -30,6 +30,7 @@ describe('resource runtimes', () => {
       manifest_file: { contents: 'contents', name: 'requirements.txt' },
       name: 'name',
       additional_python_imports: 'additional_python_imports',
+      engine: 'wasi',
     });
   });
 

@@ -33,6 +33,8 @@ export class Runtimes extends APIResource {
 export interface Runtime {
   id: string;
 
+  engine: 'wasi' | 'microvm' | 'v8';
+
   language: 'python' | 'javascript';
 
   name: string;
@@ -66,6 +68,8 @@ export interface RuntimeCreateParams {
   name: string;
 
   additional_python_imports?: string;
+
+  engine?: 'wasi' | 'microvm' | 'v8';
 }
 
 export namespace RuntimeCreateParams {
