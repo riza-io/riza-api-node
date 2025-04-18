@@ -48,7 +48,7 @@ Types:
 Methods:
 
 - <code title="post /v1/runtimes">client.runtimes.<a href="./src/resources/runtimes/runtimes.ts">create</a>({ ...params }) -> Runtime</code>
-- <code title="get /v1/runtimes">client.runtimes.<a href="./src/resources/runtimes/runtimes.ts">list</a>() -> RuntimeListResponse</code>
+- <code title="get /v1/runtimes">client.runtimes.<a href="./src/resources/runtimes/runtimes.ts">list</a>({ ...params }) -> RuntimeListResponse</code>
 - <code title="get /v1/runtimes/{id}">client.runtimes.<a href="./src/resources/runtimes/runtimes.ts">get</a>(id) -> Runtime</code>
 
 ## Revisions

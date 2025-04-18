@@ -29,7 +29,13 @@ import {
   ToolUpdateParams,
   Tools,
 } from './resources/tools';
-import { Runtime, RuntimeCreateParams, RuntimeListResponse, Runtimes } from './resources/runtimes/runtimes';
+import {
+  Runtime,
+  RuntimeCreateParams,
+  RuntimeListParams,
+  RuntimeListResponse,
+  Runtimes,
+} from './resources/runtimes/runtimes';
 
 export interface ClientOptions {
   /**
@@ -224,6 +230,7 @@ export declare namespace Riza {
     type Runtime as Runtime,
     type RuntimeListResponse as RuntimeListResponse,
     type RuntimeCreateParams as RuntimeCreateParams,
+    type RuntimeListParams as RuntimeListParams,
   };
 }
 
