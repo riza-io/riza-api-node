@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
+import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
 import * as RevisionsAPI from './revisions';
 import { Revision, RevisionCreateParams, RevisionListResponse, Revisions } from './revisions';
@@ -18,8 +19,16 @@ export class Runtimes extends APIResource {
   /**
    * Returns a list of runtimes in your project.
    */
-  list(options?: Core.RequestOptions): Core.APIPromise<RuntimeListResponse> {
-    return this._client.get('/v1/runtimes', options);
+  list(query?: RuntimeListParams, options?: Core.RequestOptions): Core.APIPromise<RuntimeListResponse>;
+  list(options?: Core.RequestOptions): Core.APIPromise<RuntimeListResponse>;
+  list(
+    query: RuntimeListParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<RuntimeListResponse> {
+    if (isRequestOptions(query)) {
+      return this.list({}, query);
+    }
+    return this._client.get('/v1/runtimes', { query, ...options });
   }
 
   /**
@@ -80,6 +89,19 @@ export namespace RuntimeCreateParams {
   }
 }
 
+export interface RuntimeListParams {
+  /**
+   * The number of items to return. Defaults to 100. Maximum is 100.
+   */
+  limit?: number;
+
+  /**
+   * The ID of the item to start after. To get the next page of results, set this to
+   * the ID of the last item in the current page.
+   */
+  starting_after?: string;
+}
+
 Runtimes.Revisions = Revisions;
 
 export declare namespace Runtimes {
@@ -87,6 +109,7 @@ export declare namespace Runtimes {
     type Runtime as Runtime,
     type RuntimeListResponse as RuntimeListResponse,
     type RuntimeCreateParams as RuntimeCreateParams,
+    type RuntimeListParams as RuntimeListParams,
   };
 
   export {

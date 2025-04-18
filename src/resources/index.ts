@@ -12,6 +12,7 @@ export {
   type Runtime,
   type RuntimeListResponse,
   type RuntimeCreateParams,
+  type RuntimeListParams,
 } from './runtimes/runtimes';
 export {
   Secrets,
