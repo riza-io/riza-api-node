@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../resource';
+import { isRequestOptions } from '../core';
 import * as Core from '../core';
 
 export class Tools extends APIResource {
@@ -21,8 +22,16 @@ export class Tools extends APIResource {
   /**
    * Returns a list of tools in your project.
    */
-  list(options?: Core.RequestOptions): Core.APIPromise<ToolListResponse> {
-    return this._client.get('/v1/tools', options);
+  list(query?: ToolListParams, options?: Core.RequestOptions): Core.APIPromise<ToolListResponse>;
+  list(options?: Core.RequestOptions): Core.APIPromise<ToolListResponse>;
+  list(
+    query: ToolListParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ToolListResponse> {
+    if (isRequestOptions(query)) {
+      return this.list({}, query);
+    }
+    return this._client.get('/v1/tools', { query, ...options });
   }
 
   /**
@@ -210,6 +219,19 @@ export interface ToolUpdateParams {
   runtime_revision_id?: string;
 }
 
+export interface ToolListParams {
+  /**
+   * The number of items to return. Defaults to 100. Maximum is 100.
+   */
+  limit?: number;
+
+  /**
+   * The ID of the item to start after. To get the next page of results, set this to
+   * the ID of the last item in the current page.
+   */
+  starting_after?: string;
+}
+
 export interface ToolExecParams {
   /**
    * Set of key-value pairs to add to the tool's execution environment.
@@ -328,6 +350,7 @@ export declare namespace Tools {
     type ToolExecResponse as ToolExecResponse,
     type ToolCreateParams as ToolCreateParams,
     type ToolUpdateParams as ToolUpdateParams,
+    type ToolListParams as ToolListParams,
     type ToolExecParams as ToolExecParams,
   };
 }

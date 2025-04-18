@@ -18,6 +18,7 @@ import {
   ToolCreateParams,
   ToolExecParams,
   ToolExecResponse,
+  ToolListParams,
   ToolListResponse,
   ToolUpdateParams,
   Tools,
@@ -199,6 +200,7 @@ export declare namespace Riza {
     type ToolExecResponse as ToolExecResponse,
     type ToolCreateParams as ToolCreateParams,
     type ToolUpdateParams as ToolUpdateParams,
+    type ToolListParams as ToolListParams,
     type ToolExecParams as ToolExecParams,
   };
 
