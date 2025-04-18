@@ -22,7 +22,7 @@ Methods:
 
 - <code title="post /v1/tools">client.tools.<a href="./src/resources/tools.ts">create</a>({ ...params }) -> Tool</code>
 - <code title="post /v1/tools/{id}">client.tools.<a href="./src/resources/tools.ts">update</a>(id, { ...params }) -> Tool</code>
-- <code title="get /v1/tools">client.tools.<a href="./src/resources/tools.ts">list</a>() -> ToolListResponse</code>
+- <code title="get /v1/tools">client.tools.<a href="./src/resources/tools.ts">list</a>({ ...params }) -> ToolListResponse</code>
 - <code title="post /v1/tools/{id}/execute">client.tools.<a href="./src/resources/tools.ts">exec</a>(id, { ...params }) -> ToolExecResponse</code>
 - <code title="get /v1/tools/{id}">client.tools.<a href="./src/resources/tools.ts">get</a>(id) -> Tool</code>
 

@@ -21,5 +21,6 @@ export {
   type ToolExecResponse,
   type ToolCreateParams,
   type ToolUpdateParams,
+  type ToolListParams,
   type ToolExecParams,
 } from './tools';
