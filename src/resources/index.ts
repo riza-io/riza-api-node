@@ -13,7 +13,13 @@ export {
   type RuntimeListResponse,
   type RuntimeCreateParams,
 } from './runtimes/runtimes';
-export { Secrets, type Secret, type SecretListResponse, type SecretCreateParams } from './secrets';
+export {
+  Secrets,
+  type Secret,
+  type SecretListResponse,
+  type SecretCreateParams,
+  type SecretListParams,
+} from './secrets';
 export {
   Tools,
   type Tool,

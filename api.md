@@ -8,7 +8,7 @@ Types:
 Methods:
 
 - <code title="post /v1/secrets">client.secrets.<a href="./src/resources/secrets.ts">create</a>({ ...params }) -> Secret</code>
-- <code title="get /v1/secrets">client.secrets.<a href="./src/resources/secrets.ts">list</a>() -> SecretListResponse</code>
+- <code title="get /v1/secrets">client.secrets.<a href="./src/resources/secrets.ts">list</a>({ ...params }) -> SecretListResponse</code>
 
 # Tools
 
