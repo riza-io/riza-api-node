@@ -12,7 +12,13 @@ import {
   CommandExecParams,
   CommandExecResponse,
 } from './resources/command';
-import { Secret, SecretCreateParams, SecretListResponse, Secrets } from './resources/secrets';
+import {
+  Secret,
+  SecretCreateParams,
+  SecretListParams,
+  SecretListResponse,
+  Secrets,
+} from './resources/secrets';
 import {
   Tool,
   ToolCreateParams,
@@ -191,6 +197,7 @@ export declare namespace Riza {
     type Secret as Secret,
     type SecretListResponse as SecretListResponse,
     type SecretCreateParams as SecretCreateParams,
+    type SecretListParams as SecretListParams,
   };
 
   export {
