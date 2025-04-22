@@ -2,9 +2,9 @@
 
 export { Revisions, type Revision, type RevisionListResponse, type RevisionCreateParams } from './revisions';
 export {
+  RuntimesRuntimesPagination,
   Runtimes,
   type Runtime,
-  type RuntimeListResponse,
   type RuntimeCreateParams,
   type RuntimeListParams,
 } from './runtimes';

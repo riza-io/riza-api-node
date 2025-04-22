@@ -3,6 +3,7 @@
 import { APIResource } from '../resource';
 import { isRequestOptions } from '../core';
 import * as Core from '../core';
+import { SecretsPagination, type SecretsPaginationParams } from '../pagination';
 
 export class Secrets extends APIResource {
   /**
@@ -15,27 +16,28 @@ export class Secrets extends APIResource {
   /**
    * Returns a list of secrets in your project.
    */
-  list(query?: SecretListParams, options?: Core.RequestOptions): Core.APIPromise<SecretListResponse>;
-  list(options?: Core.RequestOptions): Core.APIPromise<SecretListResponse>;
+  list(
+    query?: SecretListParams,
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<SecretsSecretsPagination, Secret>;
+  list(options?: Core.RequestOptions): Core.PagePromise<SecretsSecretsPagination, Secret>;
   list(
     query: SecretListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.APIPromise<SecretListResponse> {
+  ): Core.PagePromise<SecretsSecretsPagination, Secret> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
-    return this._client.get('/v1/secrets', { query, ...options });
+    return this._client.getAPIList('/v1/secrets', SecretsSecretsPagination, { query, ...options });
   }
 }
+
+export class SecretsSecretsPagination extends SecretsPagination<Secret> {}
 
 export interface Secret {
   id: string;
 
   name: string;
-}
-
-export interface SecretListResponse {
-  secrets: Array<Secret>;
 }
 
 export interface SecretCreateParams {
@@ -44,23 +46,14 @@ export interface SecretCreateParams {
   value: string;
 }
 
-export interface SecretListParams {
-  /**
-   * The number of items to return. Defaults to 100. Maximum is 100.
-   */
-  limit?: number;
+export interface SecretListParams extends SecretsPaginationParams {}
 
-  /**
-   * The ID of the item to start after. To get the next page of results, set this to
-   * the ID of the last item in the current page.
-   */
-  starting_after?: string;
-}
+Secrets.SecretsSecretsPagination = SecretsSecretsPagination;
 
 export declare namespace Secrets {
   export {
     type Secret as Secret,
-    type SecretListResponse as SecretListResponse,
+    SecretsSecretsPagination as SecretsSecretsPagination,
     type SecretCreateParams as SecretCreateParams,
     type SecretListParams as SecretListParams,
   };
