@@ -3,6 +3,7 @@
 import { APIResource } from '../resource';
 import { isRequestOptions } from '../core';
 import * as Core from '../core';
+import { ToolsPagination, type ToolsPaginationParams } from '../pagination';
 
 export class Tools extends APIResource {
   /**
@@ -22,16 +23,16 @@ export class Tools extends APIResource {
   /**
    * Returns a list of tools in your project.
    */
-  list(query?: ToolListParams, options?: Core.RequestOptions): Core.APIPromise<ToolListResponse>;
-  list(options?: Core.RequestOptions): Core.APIPromise<ToolListResponse>;
+  list(query?: ToolListParams, options?: Core.RequestOptions): Core.PagePromise<ToolsToolsPagination, Tool>;
+  list(options?: Core.RequestOptions): Core.PagePromise<ToolsToolsPagination, Tool>;
   list(
     query: ToolListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.APIPromise<ToolListResponse> {
+  ): Core.PagePromise<ToolsToolsPagination, Tool> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
-    return this._client.get('/v1/tools', { query, ...options });
+    return this._client.getAPIList('/v1/tools', ToolsToolsPagination, { query, ...options });
   }
 
   /**
@@ -49,6 +50,8 @@ export class Tools extends APIResource {
     return this._client.get(`/v1/tools/${id}`, options);
   }
 }
+
+export class ToolsToolsPagination extends ToolsPagination<Tool> {}
 
 export interface Tool {
   /**
@@ -95,10 +98,6 @@ export interface Tool {
    * runtime is updated later.
    */
   runtime_revision_id?: string;
-}
-
-export interface ToolListResponse {
-  tools: Array<Tool>;
 }
 
 export interface ToolExecResponse {
@@ -219,18 +218,7 @@ export interface ToolUpdateParams {
   runtime_revision_id?: string;
 }
 
-export interface ToolListParams {
-  /**
-   * The number of items to return. Defaults to 100. Maximum is 100.
-   */
-  limit?: number;
-
-  /**
-   * The ID of the item to start after. To get the next page of results, set this to
-   * the ID of the last item in the current page.
-   */
-  starting_after?: string;
-}
+export interface ToolListParams extends ToolsPaginationParams {}
 
 export interface ToolExecParams {
   /**
@@ -343,11 +331,13 @@ export namespace ToolExecParams {
   }
 }
 
+Tools.ToolsToolsPagination = ToolsToolsPagination;
+
 export declare namespace Tools {
   export {
     type Tool as Tool,
-    type ToolListResponse as ToolListResponse,
     type ToolExecResponse as ToolExecResponse,
+    ToolsToolsPagination as ToolsToolsPagination,
     type ToolCreateParams as ToolCreateParams,
     type ToolUpdateParams as ToolUpdateParams,
     type ToolListParams as ToolListParams,
