@@ -1,7 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../resource';
+import { isRequestOptions } from '../core';
 import * as Core from '../core';
+import { ToolsPagination, type ToolsPaginationParams } from '../pagination';
 
 export class Tools extends APIResource {
   /**
@@ -21,8 +23,16 @@ export class Tools extends APIResource {
   /**
    * Returns a list of tools in your project.
    */
-  list(options?: Core.RequestOptions): Core.APIPromise<ToolListResponse> {
-    return this._client.get('/v1/tools', options);
+  list(query?: ToolListParams, options?: Core.RequestOptions): Core.PagePromise<ToolsToolsPagination, Tool>;
+  list(options?: Core.RequestOptions): Core.PagePromise<ToolsToolsPagination, Tool>;
+  list(
+    query: ToolListParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<ToolsToolsPagination, Tool> {
+    if (isRequestOptions(query)) {
+      return this.list({}, query);
+    }
+    return this._client.getAPIList('/v1/tools', ToolsToolsPagination, { query, ...options });
   }
 
   /**
@@ -40,6 +50,8 @@ export class Tools extends APIResource {
     return this._client.get(`/v1/tools/${id}`, options);
   }
 }
+
+export class ToolsToolsPagination extends ToolsPagination<Tool> {}
 
 export interface Tool {
   /**
@@ -86,10 +98,6 @@ export interface Tool {
    * runtime is updated later.
    */
   runtime_revision_id?: string;
-}
-
-export interface ToolListResponse {
-  tools: Array<Tool>;
 }
 
 export interface ToolExecResponse {
@@ -210,6 +218,8 @@ export interface ToolUpdateParams {
   runtime_revision_id?: string;
 }
 
+export interface ToolListParams extends ToolsPaginationParams {}
+
 export interface ToolExecParams {
   /**
    * Set of key-value pairs to add to the tool's execution environment.
@@ -321,13 +331,16 @@ export namespace ToolExecParams {
   }
 }
 
+Tools.ToolsToolsPagination = ToolsToolsPagination;
+
 export declare namespace Tools {
   export {
     type Tool as Tool,
-    type ToolListResponse as ToolListResponse,
     type ToolExecResponse as ToolExecResponse,
+    ToolsToolsPagination as ToolsToolsPagination,
     type ToolCreateParams as ToolCreateParams,
     type ToolUpdateParams as ToolUpdateParams,
+    type ToolListParams as ToolListParams,
     type ToolExecParams as ToolExecParams,
   };
 }

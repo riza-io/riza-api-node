@@ -30,6 +30,7 @@ describe('resource runtimes', () => {
       manifest_file: { contents: 'contents', name: 'requirements.txt' },
       name: 'name',
       additional_python_imports: 'additional_python_imports',
+      engine: 'wasi',
     });
   });
 
@@ -49,6 +50,16 @@ describe('resource runtimes', () => {
     await expect(client.runtimes.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Riza.NotFoundError,
     );
+  });
+
+  test('list: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.runtimes.list(
+        { limit: 0, starting_after: 'starting_after' },
+        { path: '/_stainless_unknown_path' },
+      ),
+    ).rejects.toThrow(Riza.NotFoundError);
   });
 
   test('get', async () => {

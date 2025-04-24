@@ -3,26 +3,24 @@
 Types:
 
 - <code><a href="./src/resources/secrets.ts">Secret</a></code>
-- <code><a href="./src/resources/secrets.ts">SecretListResponse</a></code>
 
 Methods:
 
 - <code title="post /v1/secrets">client.secrets.<a href="./src/resources/secrets.ts">create</a>({ ...params }) -> Secret</code>
-- <code title="get /v1/secrets">client.secrets.<a href="./src/resources/secrets.ts">list</a>() -> SecretListResponse</code>
+- <code title="get /v1/secrets">client.secrets.<a href="./src/resources/secrets.ts">list</a>({ ...params }) -> SecretsSecretsPagination</code>
 
 # Tools
 
 Types:
 
 - <code><a href="./src/resources/tools.ts">Tool</a></code>
-- <code><a href="./src/resources/tools.ts">ToolListResponse</a></code>
 - <code><a href="./src/resources/tools.ts">ToolExecResponse</a></code>
 
 Methods:
 
 - <code title="post /v1/tools">client.tools.<a href="./src/resources/tools.ts">create</a>({ ...params }) -> Tool</code>
 - <code title="post /v1/tools/{id}">client.tools.<a href="./src/resources/tools.ts">update</a>(id, { ...params }) -> Tool</code>
-- <code title="get /v1/tools">client.tools.<a href="./src/resources/tools.ts">list</a>() -> ToolListResponse</code>
+- <code title="get /v1/tools">client.tools.<a href="./src/resources/tools.ts">list</a>({ ...params }) -> ToolsToolsPagination</code>
 - <code title="post /v1/tools/{id}/execute">client.tools.<a href="./src/resources/tools.ts">exec</a>(id, { ...params }) -> ToolExecResponse</code>
 - <code title="get /v1/tools/{id}">client.tools.<a href="./src/resources/tools.ts">get</a>(id) -> Tool</code>
 
@@ -43,12 +41,11 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/runtimes/runtimes.ts">Runtime</a></code>
-- <code><a href="./src/resources/runtimes/runtimes.ts">RuntimeListResponse</a></code>
 
 Methods:
 
 - <code title="post /v1/runtimes">client.runtimes.<a href="./src/resources/runtimes/runtimes.ts">create</a>({ ...params }) -> Runtime</code>
-- <code title="get /v1/runtimes">client.runtimes.<a href="./src/resources/runtimes/runtimes.ts">list</a>() -> RuntimeListResponse</code>
+- <code title="get /v1/runtimes">client.runtimes.<a href="./src/resources/runtimes/runtimes.ts">list</a>({ ...params }) -> RuntimesRuntimesPagination</code>
 - <code title="get /v1/runtimes/{id}">client.runtimes.<a href="./src/resources/runtimes/runtimes.ts">get</a>(id) -> Runtime</code>
 
 ## Revisions

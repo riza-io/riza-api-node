@@ -58,6 +58,13 @@ describe('resource tools', () => {
     await expect(client.tools.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(Riza.NotFoundError);
   });
 
+  test('list: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.tools.list({ limit: 0, starting_after: 'starting_after' }, { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Riza.NotFoundError);
+  });
+
   test('exec', async () => {
     const responsePromise = client.tools.exec('id', {});
     const rawResponse = await responsePromise.asResponse();

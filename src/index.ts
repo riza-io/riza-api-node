@@ -3,6 +3,15 @@
 import { type Agent } from './_shims/index';
 import * as Core from './core';
 import * as Errors from './error';
+import * as Pagination from './pagination';
+import {
+  type RuntimesPaginationParams,
+  RuntimesPaginationResponse,
+  type SecretsPaginationParams,
+  SecretsPaginationResponse,
+  type ToolsPaginationParams,
+  ToolsPaginationResponse,
+} from './pagination';
 import * as Uploads from './uploads';
 import * as API from './resources/index';
 import {
@@ -12,17 +21,30 @@ import {
   CommandExecParams,
   CommandExecResponse,
 } from './resources/command';
-import { Secret, SecretCreateParams, SecretListResponse, Secrets } from './resources/secrets';
+import {
+  Secret,
+  SecretCreateParams,
+  SecretListParams,
+  Secrets,
+  SecretsSecretsPagination,
+} from './resources/secrets';
 import {
   Tool,
   ToolCreateParams,
   ToolExecParams,
   ToolExecResponse,
-  ToolListResponse,
+  ToolListParams,
   ToolUpdateParams,
   Tools,
+  ToolsToolsPagination,
 } from './resources/tools';
-import { Runtime, RuntimeCreateParams, RuntimeListResponse, Runtimes } from './resources/runtimes/runtimes';
+import {
+  Runtime,
+  RuntimeCreateParams,
+  RuntimeListParams,
+  Runtimes,
+  RuntimesRuntimesPagination,
+} from './resources/runtimes/runtimes';
 
 export interface ClientOptions {
   /**
@@ -179,26 +201,49 @@ export class Riza extends Core.APIClient {
 }
 
 Riza.Secrets = Secrets;
+Riza.SecretsSecretsPagination = SecretsSecretsPagination;
 Riza.Tools = Tools;
+Riza.ToolsToolsPagination = ToolsToolsPagination;
 Riza.Command = Command;
 Riza.Runtimes = Runtimes;
+Riza.RuntimesRuntimesPagination = RuntimesRuntimesPagination;
 export declare namespace Riza {
   export type RequestOptions = Core.RequestOptions;
+
+  export import RuntimesPagination = Pagination.RuntimesPagination;
+  export {
+    type RuntimesPaginationParams as RuntimesPaginationParams,
+    type RuntimesPaginationResponse as RuntimesPaginationResponse,
+  };
+
+  export import ToolsPagination = Pagination.ToolsPagination;
+  export {
+    type ToolsPaginationParams as ToolsPaginationParams,
+    type ToolsPaginationResponse as ToolsPaginationResponse,
+  };
+
+  export import SecretsPagination = Pagination.SecretsPagination;
+  export {
+    type SecretsPaginationParams as SecretsPaginationParams,
+    type SecretsPaginationResponse as SecretsPaginationResponse,
+  };
 
   export {
     Secrets as Secrets,
     type Secret as Secret,
-    type SecretListResponse as SecretListResponse,
+    SecretsSecretsPagination as SecretsSecretsPagination,
     type SecretCreateParams as SecretCreateParams,
+    type SecretListParams as SecretListParams,
   };
 
   export {
     Tools as Tools,
     type Tool as Tool,
-    type ToolListResponse as ToolListResponse,
     type ToolExecResponse as ToolExecResponse,
+    ToolsToolsPagination as ToolsToolsPagination,
     type ToolCreateParams as ToolCreateParams,
     type ToolUpdateParams as ToolUpdateParams,
+    type ToolListParams as ToolListParams,
     type ToolExecParams as ToolExecParams,
   };
 
@@ -213,8 +258,9 @@ export declare namespace Riza {
   export {
     Runtimes as Runtimes,
     type Runtime as Runtime,
-    type RuntimeListResponse as RuntimeListResponse,
+    RuntimesRuntimesPagination as RuntimesRuntimesPagination,
     type RuntimeCreateParams as RuntimeCreateParams,
+    type RuntimeListParams as RuntimeListParams,
   };
 }
 

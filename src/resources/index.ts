@@ -8,18 +8,26 @@ export {
   type CommandExecFuncParams,
 } from './command';
 export {
+  RuntimesRuntimesPagination,
   Runtimes,
   type Runtime,
-  type RuntimeListResponse,
   type RuntimeCreateParams,
+  type RuntimeListParams,
 } from './runtimes/runtimes';
-export { Secrets, type Secret, type SecretListResponse, type SecretCreateParams } from './secrets';
 export {
+  SecretsSecretsPagination,
+  Secrets,
+  type Secret,
+  type SecretCreateParams,
+  type SecretListParams,
+} from './secrets';
+export {
+  ToolsToolsPagination,
   Tools,
   type Tool,
-  type ToolListResponse,
   type ToolExecResponse,
   type ToolCreateParams,
   type ToolUpdateParams,
+  type ToolListParams,
   type ToolExecParams,
 } from './tools';
