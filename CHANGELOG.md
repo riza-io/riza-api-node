@@ -1,5 +1,39 @@
 # Changelog
 
+## 0.11.0 (2025-04-24)
+
+Full Changelog: [v0.10.0...v0.11.0](https://github.com/riza-io/riza-api-node/compare/v0.10.0...v0.11.0)
+
+### Features
+
+* **api:** api update ([cd5c2b3](https://github.com/riza-io/riza-api-node/commit/cd5c2b38a41ab34af5a3257cabcd95bdd93ea7d1))
+* **api:** api update ([497bda0](https://github.com/riza-io/riza-api-node/commit/497bda042843a82e604ddbdd33bd741ea1058aef))
+* **api:** api update ([2da397e](https://github.com/riza-io/riza-api-node/commit/2da397ed116972d02d427fc348da68f705f23bd4))
+* **api:** api update ([1c78e66](https://github.com/riza-io/riza-api-node/commit/1c78e666985e0cd52173ddbdfe31a15a75eec8e4))
+* **api:** api update ([#142](https://github.com/riza-io/riza-api-node/issues/142)) ([0eae574](https://github.com/riza-io/riza-api-node/commit/0eae57485bd552b9c79a6c84f76f5ec022e2659d))
+
+
+### Bug Fixes
+
+* **api:** improve type resolution when importing as a package ([#140](https://github.com/riza-io/riza-api-node/issues/140)) ([d721a53](https://github.com/riza-io/riza-api-node/commit/d721a5347e9c53d4b09ceba7c183a6e674fc517d))
+* avoid type error in certain environments ([#136](https://github.com/riza-io/riza-api-node/issues/136)) ([2e06e0e](https://github.com/riza-io/riza-api-node/commit/2e06e0e5122e6c37b40f8be4b3f4be6bd94daffa))
+* **client:** send `X-Stainless-Timeout` in seconds ([#138](https://github.com/riza-io/riza-api-node/issues/138)) ([6c12997](https://github.com/riza-io/riza-api-node/commit/6c12997919ece052da4e545304b01f38f7d46ed2))
+* **internal:** work around https://github.com/vercel/next.js/issues/76881 ([#137](https://github.com/riza-io/riza-api-node/issues/137)) ([96a4414](https://github.com/riza-io/riza-api-node/commit/96a441478b1b5ee0b824495bc76a86989e963503))
+* **mcp:** remove unused tools.ts ([#141](https://github.com/riza-io/riza-api-node/issues/141)) ([57ee3a8](https://github.com/riza-io/riza-api-node/commit/57ee3a86dbca12ce5b2fcb7d651466d6a18535af))
+
+
+### Chores
+
+* **ci:** add timeout thresholds for CI jobs ([c3ed378](https://github.com/riza-io/riza-api-node/commit/c3ed378b9e45de48dcae2d297b0c01ad7e4e2fea))
+* **ci:** only use depot for staging repos ([adde366](https://github.com/riza-io/riza-api-node/commit/adde3665e7c6c4135b40f5c73dcd7ebfb3b566d9))
+* **client:** minor internal fixes ([7f5d830](https://github.com/riza-io/riza-api-node/commit/7f5d8301ef0190f20b2b466e2cecdb9bee2f1ae6))
+* **exports:** cleaner resource index imports ([#133](https://github.com/riza-io/riza-api-node/issues/133)) ([1420dbc](https://github.com/riza-io/riza-api-node/commit/1420dbc5ef146282dd8e7f1e66123e1f2004ae5b))
+* **exports:** stop using path fallbacks ([#135](https://github.com/riza-io/riza-api-node/issues/135)) ([20c022c](https://github.com/riza-io/riza-api-node/commit/20c022cd1b0eab5bbfec75a47601289737334b0e))
+* **internal:** add aliases for Record and Array ([#139](https://github.com/riza-io/riza-api-node/issues/139)) ([d737539](https://github.com/riza-io/riza-api-node/commit/d737539d1203ed7d34ce39d6b563a0b35a6bc52e))
+* **internal:** codegen related update ([9e4ea63](https://github.com/riza-io/riza-api-node/commit/9e4ea63869d597c51e4a4dbf6210de75f4ba83af))
+* **internal:** reduce CI branch coverage ([8171a8b](https://github.com/riza-io/riza-api-node/commit/8171a8b899aaba7b41447be72040b1d7d4b5e24b))
+* **internal:** upload builds and expand CI branch coverage ([0535ce8](https://github.com/riza-io/riza-api-node/commit/0535ce86cd29f6f8186cb0f47e38874d5c8ca4a0))
+
 ## 0.10.0 (2025-03-14)
 
 Full Changelog: [v0.9.0...v0.10.0](https://github.com/riza-io/riza-api-node/compare/v0.9.0...v0.10.0)
