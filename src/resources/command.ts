@@ -8,6 +8,14 @@ export class Command extends APIResource {
    * Run a script in a secure, isolated environment. Scripts can read from `stdin`
    * and write to `stdout` or `stderr`. They can access input files, environment
    * variables and command line arguments.
+   *
+   * @example
+   * ```ts
+   * const response = await client.command.exec({
+   *   code: 'print("Hello world!")',
+   *   language: 'PYTHON',
+   * });
+   * ```
    */
   exec(body: CommandExecParams, options?: Core.RequestOptions): Core.APIPromise<CommandExecResponse> {
     return this._client.post('/v1/execute', { body, ...options });
@@ -16,6 +24,15 @@ export class Command extends APIResource {
   /**
    * Run a function in a secure, isolated environment. Define a function named
    * `execute`. The function will be passed `input` as an object.
+   *
+   * @example
+   * ```ts
+   * const response = await client.command.execFunc({
+   *   code: 'def execute(input): return { "name": input["name"], "executed": True }',
+   *   language: 'python',
+   *   input: { name: 'John' },
+   * });
+   * ```
    */
   execFunc(
     body: CommandExecFuncParams,
