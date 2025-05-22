@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.11.1 (2025-05-22)
+
+Full Changelog: [v0.11.0...v0.11.1](https://github.com/riza-io/riza-api-node/compare/v0.11.0...v0.11.1)
+
+### Chores
+
+* **ci:** bump node version for release workflows ([17dd90c](https://github.com/riza-io/riza-api-node/commit/17dd90c62450abc18adaec342b32bfe06ffd4485))
+* **docs:** grammar improvements ([1f3bd75](https://github.com/riza-io/riza-api-node/commit/1f3bd75a7c414e43de236a1e6c1f7f6bc50da5eb))
+
+
+### Documentation
+
+* add examples to tsdocs ([abc5e09](https://github.com/riza-io/riza-api-node/commit/abc5e09cb87cd9f552897126b4c51345e7b8e3ef))
+* **readme:** fix typo ([e815a96](https://github.com/riza-io/riza-api-node/commit/e815a96453b3de21518f6a4431bb40ac78197485))
+
 ## 0.11.0 (2025-04-24)
 
 Full Changelog: [v0.10.0...v0.11.0](https://github.com/riza-io/riza-api-node/compare/v0.10.0...v0.11.0)
