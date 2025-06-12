@@ -44,6 +44,11 @@ export class Command extends APIResource {
 
 export interface CommandExecResponse {
   /**
+   * The ID of the execution.
+   */
+  id: string;
+
+  /**
    * The execution time of the script in milliseconds.
    */
   duration: number;
@@ -90,6 +95,11 @@ export namespace CommandExecFuncResponse {
    * The execution details of the function.
    */
   export interface Execution {
+    /**
+     * The ID of the execution.
+     */
+    id: string;
+
     /**
      * The execution time of the function in milliseconds.
      */

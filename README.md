@@ -28,7 +28,7 @@ const client = new Riza({
 
 const response = await client.command.exec({ code: "print('Hello, World!')", language: 'python' });
 
-console.log(response.duration);
+console.log(response.id);
 ```
 
 ### Request & Response types
@@ -147,7 +147,7 @@ const { data: response, response: raw } = await client.command
   .exec({ code: "print('Hello, World!')", language: 'python' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(response.duration);
+console.log(response.id);
 ```
 
 ### Making custom/undocumented requests
