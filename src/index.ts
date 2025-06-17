@@ -148,6 +148,7 @@ export class Riza extends Core.APIClient {
 
     super({
       baseURL: options.baseURL!,
+      baseURLOverridden: baseURL ? baseURL !== 'https://api.riza.io' : false,
       timeout: options.timeout ?? 60000 /* 1 minute */,
       httpAgent: options.httpAgent,
       maxRetries: options.maxRetries,
@@ -163,6 +164,13 @@ export class Riza extends Core.APIClient {
   tools: API.Tools = new API.Tools(this);
   command: API.Command = new API.Command(this);
   runtimes: API.Runtimes = new API.Runtimes(this);
+
+  /**
+   * Check whether the base URL is set to its default.
+   */
+  #baseURLOverridden(): boolean {
+    return this.baseURL !== 'https://api.riza.io';
+  }
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
