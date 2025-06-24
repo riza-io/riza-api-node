@@ -142,7 +142,7 @@ export interface CommandExecParams {
   /**
    * Set of key-value pairs to add to the script's execution environment.
    */
-  env?: Record<string, string>;
+  env?: { [key: string]: string };
 
   /**
    * List of input files.
@@ -289,7 +289,7 @@ export interface CommandExecFuncParams {
   /**
    * Set of key-value pairs to add to the function's execution environment.
    */
-  env?: Record<string, string>;
+  env?: { [key: string]: string };
 
   /**
    * List of input files.
