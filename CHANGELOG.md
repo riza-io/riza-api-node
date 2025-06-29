@@ -1,5 +1,42 @@
 # Changelog
 
+## 0.12.0 (2025-06-29)
+
+Full Changelog: [v0.11.0...v0.12.0](https://github.com/riza-io/riza-api-node/compare/v0.11.0...v0.12.0)
+
+### Features
+
+* **api:** api update ([58e2120](https://github.com/riza-io/riza-api-node/commit/58e21202a97b52a6e24c187144f8e75b04989856))
+* **api:** api update ([a27fe95](https://github.com/riza-io/riza-api-node/commit/a27fe95b1c33a9eeb4d496e0992ba9c01fbacada))
+* **api:** api update ([c3c75d0](https://github.com/riza-io/riza-api-node/commit/c3c75d0866da0e3bf7d9a9dc7a9b23c93b2081c0))
+* **client:** add support for endpoint-specific base URLs ([9a94bd6](https://github.com/riza-io/riza-api-node/commit/9a94bd6f17998dc98b5cbeb02127f9417b02857f))
+
+
+### Bug Fixes
+
+* publish script — handle NPM errors correctly ([2d116b2](https://github.com/riza-io/riza-api-node/commit/2d116b25b827a2b301b2400cae1cf94abca4d4bd))
+
+
+### Chores
+
+* **ci:** bump node version for release workflows ([17dd90c](https://github.com/riza-io/riza-api-node/commit/17dd90c62450abc18adaec342b32bfe06ffd4485))
+* **ci:** enable for pull requests ([5c95bb6](https://github.com/riza-io/riza-api-node/commit/5c95bb68ce74b485b4842458293e71e4ff072b98))
+* **docs:** grammar improvements ([1f3bd75](https://github.com/riza-io/riza-api-node/commit/1f3bd75a7c414e43de236a1e6c1f7f6bc50da5eb))
+* **docs:** use top-level-await in example snippets ([9f0c5ba](https://github.com/riza-io/riza-api-node/commit/9f0c5ba4a9ef53097f85eee26be87f3d9316a71b))
+* improve publish-npm script --latest tag logic ([742f381](https://github.com/riza-io/riza-api-node/commit/742f381a5373382f6bda61d08a7e450df381abe9))
+* **internal:** make base APIResource abstract ([0fed38a](https://github.com/riza-io/riza-api-node/commit/0fed38a1c8f25bcb0ef76190f45fdefc7249bede))
+
+
+### Documentation
+
+* add examples to tsdocs ([abc5e09](https://github.com/riza-io/riza-api-node/commit/abc5e09cb87cd9f552897126b4c51345e7b8e3ef))
+* **readme:** fix typo ([e815a96](https://github.com/riza-io/riza-api-node/commit/e815a96453b3de21518f6a4431bb40ac78197485))
+
+
+### Refactors
+
+* **types:** replace Record with mapped types ([796a521](https://github.com/riza-io/riza-api-node/commit/796a52145c94d2cf4917845701ea0eb36b78b97f))
+
 ## 0.11.0 (2025-04-24)
 
 Full Changelog: [v0.10.0...v0.11.0](https://github.com/riza-io/riza-api-node/compare/v0.10.0...v0.11.0)
