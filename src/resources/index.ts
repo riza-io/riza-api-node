@@ -8,9 +8,16 @@ export {
   type CommandExecFuncParams,
 } from './command';
 export {
+  ExecutionsDefaultPagination,
+  Executions,
+  type Execution,
+  type ExecutionListParams,
+} from './executions';
+export {
   RuntimesRuntimesPagination,
   Runtimes,
   type Runtime,
+  type RuntimeDeleteResponse,
   type RuntimeCreateParams,
   type RuntimeListParams,
 } from './runtimes/runtimes';

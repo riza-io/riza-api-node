@@ -5,6 +5,8 @@ import * as Core from './core';
 import * as Errors from './error';
 import * as Pagination from './pagination';
 import {
+  type DefaultPaginationParams,
+  DefaultPaginationResponse,
   type RuntimesPaginationParams,
   RuntimesPaginationResponse,
   type SecretsPaginationParams,
@@ -21,6 +23,12 @@ import {
   CommandExecParams,
   CommandExecResponse,
 } from './resources/command';
+import {
+  Execution,
+  ExecutionListParams,
+  Executions,
+  ExecutionsDefaultPagination,
+} from './resources/executions';
 import {
   Secret,
   SecretCreateParams,
@@ -41,6 +49,7 @@ import {
 import {
   Runtime,
   RuntimeCreateParams,
+  RuntimeDeleteResponse,
   RuntimeListParams,
   Runtimes,
   RuntimesRuntimesPagination,
@@ -164,6 +173,7 @@ export class Riza extends Core.APIClient {
   tools: API.Tools = new API.Tools(this);
   command: API.Command = new API.Command(this);
   runtimes: API.Runtimes = new API.Runtimes(this);
+  executions: API.Executions = new API.Executions(this);
 
   /**
    * Check whether the base URL is set to its default.
@@ -215,8 +225,16 @@ Riza.ToolsToolsPagination = ToolsToolsPagination;
 Riza.Command = Command;
 Riza.Runtimes = Runtimes;
 Riza.RuntimesRuntimesPagination = RuntimesRuntimesPagination;
+Riza.Executions = Executions;
+Riza.ExecutionsDefaultPagination = ExecutionsDefaultPagination;
 export declare namespace Riza {
   export type RequestOptions = Core.RequestOptions;
+
+  export import DefaultPagination = Pagination.DefaultPagination;
+  export {
+    type DefaultPaginationParams as DefaultPaginationParams,
+    type DefaultPaginationResponse as DefaultPaginationResponse,
+  };
 
   export import RuntimesPagination = Pagination.RuntimesPagination;
   export {
@@ -266,9 +284,17 @@ export declare namespace Riza {
   export {
     Runtimes as Runtimes,
     type Runtime as Runtime,
+    type RuntimeDeleteResponse as RuntimeDeleteResponse,
     RuntimesRuntimesPagination as RuntimesRuntimesPagination,
     type RuntimeCreateParams as RuntimeCreateParams,
     type RuntimeListParams as RuntimeListParams,
+  };
+
+  export {
+    Executions as Executions,
+    type Execution as Execution,
+    ExecutionsDefaultPagination as ExecutionsDefaultPagination,
+    type ExecutionListParams as ExecutionListParams,
   };
 }
 

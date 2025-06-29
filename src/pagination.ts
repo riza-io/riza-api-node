@@ -2,6 +2,62 @@
 
 import { AbstractPage, Response, APIClient, FinalRequestOptions, PageInfo } from './core';
 
+export interface DefaultPaginationResponse<Item> {
+  data: Array<Item>;
+}
+
+export interface DefaultPaginationParams {
+  starting_after?: string;
+
+  limit?: number;
+}
+
+export class DefaultPagination<Item extends { id: string }>
+  extends AbstractPage<Item>
+  implements DefaultPaginationResponse<Item>
+{
+  data: Array<Item>;
+
+  constructor(
+    client: APIClient,
+    response: Response,
+    body: DefaultPaginationResponse<Item>,
+    options: FinalRequestOptions,
+  ) {
+    super(client, response, body, options);
+
+    this.data = body.data || [];
+  }
+
+  getPaginatedItems(): Item[] {
+    return this.data ?? [];
+  }
+
+  // @deprecated Please use `nextPageInfo()` instead
+  nextPageParams(): Partial<DefaultPaginationParams> | null {
+    const info = this.nextPageInfo();
+    if (!info) return null;
+    if ('params' in info) return info.params;
+    const params = Object.fromEntries(info.url.searchParams);
+    if (!Object.keys(params).length) return null;
+    return params;
+  }
+
+  nextPageInfo(): PageInfo | null {
+    const data = this.getPaginatedItems();
+    if (!data.length) {
+      return null;
+    }
+
+    const id = data[data.length - 1]?.id;
+    if (!id) {
+      return null;
+    }
+
+    return { params: { starting_after: id } };
+  }
+}
+
 export interface RuntimesPaginationResponse<Item> {
   runtimes: Array<Item>;
 }
