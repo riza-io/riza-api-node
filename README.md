@@ -26,13 +26,9 @@ const client = new Riza({
   apiKey: process.env['RIZA_API_KEY'], // This is the default and can be omitted
 });
 
-async function main() {
-  const response = await client.command.exec({ code: "print('Hello, World!')", language: 'python' });
+const response = await client.command.exec({ code: "print('Hello, World!')", language: 'python' });
 
-  console.log(response.duration);
-}
-
-main();
+console.log(response.id);
 ```
 
 ### Request & Response types
@@ -47,12 +43,8 @@ const client = new Riza({
   apiKey: process.env['RIZA_API_KEY'], // This is the default and can be omitted
 });
 
-async function main() {
-  const params: Riza.CommandExecParams = { code: "print('Hello, World!')", language: 'python' };
-  const response: Riza.CommandExecResponse = await client.command.exec(params);
-}
-
-main();
+const params: Riza.CommandExecParams = { code: "print('Hello, World!')", language: 'python' };
+const response: Riza.CommandExecResponse = await client.command.exec(params);
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -65,24 +57,20 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-async function main() {
-  const response = await client.command
-    .exec({ code: "print('Hello, World!')", language: 'python' })
-    .catch(async (err) => {
-      if (err instanceof Riza.APIError) {
-        console.log(err.status); // 400
-        console.log(err.name); // BadRequestError
-        console.log(err.headers); // {server: 'nginx', ...}
-      } else {
-        throw err;
-      }
-    });
-}
-
-main();
+const response = await client.command
+  .exec({ code: "print('Hello, World!')", language: 'python' })
+  .catch(async (err) => {
+    if (err instanceof Riza.APIError) {
+      console.log(err.status); // 400
+      console.log(err.name); // BadRequestError
+      console.log(err.headers); // {server: 'nginx', ...}
+    } else {
+      throw err;
+    }
+  });
 ```
 
-Error codes are as followed:
+Error codes are as follows:
 
 | Status Code | Error Type                 |
 | ----------- | -------------------------- |
@@ -159,7 +147,7 @@ const { data: response, response: raw } = await client.command
   .exec({ code: "print('Hello, World!')", language: 'python' })
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(response.duration);
+console.log(response.id);
 ```
 
 ### Making custom/undocumented requests

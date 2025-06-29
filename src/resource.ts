@@ -2,7 +2,7 @@
 
 import type { Riza } from './index';
 
-export class APIResource {
+export abstract class APIResource {
   protected _client: Riza;
 
   constructor(client: Riza) {

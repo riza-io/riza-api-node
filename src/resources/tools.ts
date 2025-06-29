@@ -126,6 +126,11 @@ export namespace ToolExecResponse {
    */
   export interface Execution {
     /**
+     * The ID of the execution.
+     */
+    id: string;
+
+    /**
      * The execution time of the function in milliseconds.
      */
     duration: number;

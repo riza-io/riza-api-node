@@ -36,6 +36,13 @@ export class Runtimes extends APIResource {
   }
 
   /**
+   * Deletes a runtime.
+   */
+  delete(id: string, options?: Core.RequestOptions): Core.APIPromise<RuntimeDeleteResponse> {
+    return this._client.delete(`/v1/runtimes/${id}`, options);
+  }
+
+  /**
    * Retrieves a runtime.
    */
   get(id: string, options?: Core.RequestOptions): Core.APIPromise<Runtime> {
@@ -71,6 +78,12 @@ export namespace Runtime {
   }
 }
 
+export interface RuntimeDeleteResponse {
+  id?: string;
+
+  deleted?: boolean;
+}
+
 export interface RuntimeCreateParams {
   language: 'python' | 'javascript';
 
@@ -99,6 +112,7 @@ Runtimes.Revisions = Revisions;
 export declare namespace Runtimes {
   export {
     type Runtime as Runtime,
+    type RuntimeDeleteResponse as RuntimeDeleteResponse,
     RuntimesRuntimesPagination as RuntimesRuntimesPagination,
     type RuntimeCreateParams as RuntimeCreateParams,
     type RuntimeListParams as RuntimeListParams,

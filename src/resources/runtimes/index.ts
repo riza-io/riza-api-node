@@ -5,6 +5,7 @@ export {
   RuntimesRuntimesPagination,
   Runtimes,
   type Runtime,
+  type RuntimeDeleteResponse,
   type RuntimeCreateParams,
   type RuntimeListParams,
 } from './runtimes';

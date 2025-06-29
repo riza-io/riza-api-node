@@ -8,6 +8,14 @@ export class Command extends APIResource {
    * Run a script in a secure, isolated environment. Scripts can read from `stdin`
    * and write to `stdout` or `stderr`. They can access input files, environment
    * variables and command line arguments.
+   *
+   * @example
+   * ```ts
+   * const response = await client.command.exec({
+   *   code: 'print("Hello world!")',
+   *   language: 'PYTHON',
+   * });
+   * ```
    */
   exec(body: CommandExecParams, options?: Core.RequestOptions): Core.APIPromise<CommandExecResponse> {
     return this._client.post('/v1/execute', { body, ...options });
@@ -16,6 +24,15 @@ export class Command extends APIResource {
   /**
    * Run a function in a secure, isolated environment. Define a function named
    * `execute`. The function will be passed `input` as an object.
+   *
+   * @example
+   * ```ts
+   * const response = await client.command.execFunc({
+   *   code: 'def execute(input): return { "name": input["name"], "executed": True }',
+   *   language: 'python',
+   *   input: { name: 'John' },
+   * });
+   * ```
    */
   execFunc(
     body: CommandExecFuncParams,
@@ -26,6 +43,11 @@ export class Command extends APIResource {
 }
 
 export interface CommandExecResponse {
+  /**
+   * The ID of the execution.
+   */
+  id: string;
+
   /**
    * The execution time of the script in milliseconds.
    */
@@ -74,6 +96,11 @@ export namespace CommandExecFuncResponse {
    */
   export interface Execution {
     /**
+     * The ID of the execution.
+     */
+    id: string;
+
+    /**
      * The execution time of the function in milliseconds.
      */
     duration: number;
@@ -115,7 +142,7 @@ export interface CommandExecParams {
   /**
    * Set of key-value pairs to add to the script's execution environment.
    */
-  env?: Record<string, string>;
+  env?: { [key: string]: string };
 
   /**
    * List of input files.
@@ -262,7 +289,7 @@ export interface CommandExecFuncParams {
   /**
    * Set of key-value pairs to add to the function's execution environment.
    */
-  env?: Record<string, string>;
+  env?: { [key: string]: string };
 
   /**
    * List of input files.
