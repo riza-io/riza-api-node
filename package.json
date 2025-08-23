@@ -1,6 +1,6 @@
 {
   "name": "@riza-io/api",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "description": "The official TypeScript library for the Riza API",
   "author": "Riza <hello@riza.io>",
   "types": "dist/index.d.ts",
@@ -13,6 +13,9 @@
     "**/*"
   ],
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "./scripts/test",
     "build": "./scripts/build",
@@ -58,10 +61,6 @@
     "./shims/web.js",
     "./shims/web.mjs"
   ],
-  "imports": {
-    "@riza-io/api": ".",
-    "@riza-io/api/*": "./src/*"
-  },
   "exports": {
     "./_shims/auto/*": {
       "deno": {
