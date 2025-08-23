@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.12.1 (2025-08-23)
+
+Full Changelog: [v0.12.0...v0.12.1](https://github.com/riza-io/riza-api-node/compare/v0.12.0...v0.12.1)
+
+### Bug Fixes
+
+* **client:** don't send `Content-Type` for bodyless methods ([b9fbc47](https://github.com/riza-io/riza-api-node/commit/b9fbc478afcf86c5dd148866041c362bff5fc4d5))
+
+
+### Chores
+
+* **deps:** update dependency node-fetch to v2.6.13 ([80b218e](https://github.com/riza-io/riza-api-node/commit/80b218e96a7e040fe8b2afcd20e515a58c6ee2aa))
+* **internal:** formatting change ([6553c6f](https://github.com/riza-io/riza-api-node/commit/6553c6f9b4c76dedace58e1b6ae0828f6e8df340))
+* **internal:** move publish config ([6e4fbf7](https://github.com/riza-io/riza-api-node/commit/6e4fbf78863adbbc30cef17b3ce9d1ec74e87b9f))
+* **internal:** remove redundant imports config ([ad7cb50](https://github.com/riza-io/riza-api-node/commit/ad7cb50d86795a07987eed9ecab9537a6c996d46))
+* **internal:** update comment in script ([d7e857c](https://github.com/riza-io/riza-api-node/commit/d7e857c75e78e68f2d141609ea23ebfcc5ccf0f7))
+* make some internal functions async ([88e6006](https://github.com/riza-io/riza-api-node/commit/88e6006e3bff05c5ab7a852778b64e817eb360b0))
+* mention unit type in timeout docs ([4ff0098](https://github.com/riza-io/riza-api-node/commit/4ff0098f1a9274acb882796f37a18affd478c7b1))
+* update @stainless-api/prism-cli to v5.15.0 ([a430d24](https://github.com/riza-io/riza-api-node/commit/a430d242e7eaf87b90d5b7dd40ded18726477e3f))
+
 ## 0.12.0 (2025-06-29)
 
 Full Changelog: [v0.11.0...v0.12.0](https://github.com/riza-io/riza-api-node/compare/v0.11.0...v0.12.0)
